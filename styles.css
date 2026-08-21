@@ -9,6 +9,7 @@ body {
   color: #0A1931;
   background: #fff;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 /* NAVBAR */
@@ -61,22 +62,20 @@ nav {
   font-weight: 600;
 }
 
+/* MOBILE NAV */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
-
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     margin-top: 12px;
   }
-
   .nav-links.show {
     display: flex;
   }
-
   .nav-links a {
     padding: 12px 0;
     border-top: 1px solid rgba(255,255,255,0.2);
@@ -122,6 +121,7 @@ nav {
   font-weight: 800;
   max-width: 800px;
   margin: 0 auto;
+  line-height: 1.15;
 }
 
 .hero p {
@@ -139,6 +139,7 @@ nav {
   padding: 24px 4%;
   text-align: center;
   font-size: 18px;
+  font-weight: 700;
 }
 
 /* SECTIONS */
@@ -188,21 +189,22 @@ nav {
   gap: 32px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-items: center;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* CARD (Scholars & Volunteers) */
+/* === FIXED CARD - NO MORE CUTTING === */
 .card {
   background: #fff;
   border-radius: 16px;
-  padding: 0;
   border: 1px solid #eee;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   width: 100%;
   max-width: 360px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -210,18 +212,22 @@ nav {
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
+/* FIXED IMAGE - SHOWS FULL FACE */
 .card img {
   width: 100%;
-  aspect-ratio: 4 / 5;       /* portrait ratio, shows full head + shoulders */
   height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: top center; /* keeps face at top, not center-cropped */
+  object-position: top center;
   background: #F7F9FC;
+  display: block;
+  border-bottom: 1px solid #eee;
 }
 
 .card-body {
   padding: 20px;
   text-align: left;
+  flex-grow: 1;
 }
 
 .card-body h3 {
@@ -260,6 +266,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .newsletter-form input {
@@ -344,18 +351,15 @@ footer {
   .hero h1 {
     font-size: 32px;
   }
-
   .stats {
     flex-direction: column;
     gap: 16px;
   }
-
   nav {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .nav-links {
-    margin-top: 10px;
+  .card img {
+    aspect-ratio: 1 / 1;
   }
 }

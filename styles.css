@@ -8,6 +8,7 @@ body {
   font-family: 'Inter', Arial, sans-serif;
   color: #0A1931;
   background: #fff;
+  line-height: 1.6;
 }
 
 /* NAVBAR */
@@ -91,11 +92,12 @@ nav {
   text-decoration: none;
   font-weight: 700;
   display: inline-block;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover {
   background: #c89a3f;
+  transform: translateY(-2px);
 }
 
 .btn-dark {
@@ -105,6 +107,7 @@ nav {
 
 .btn-dark:hover {
   background: #08152b;
+  transform: translateY(-2px);
 }
 
 /* HERO */
@@ -126,11 +129,6 @@ nav {
   margin: 20px auto;
   color: #555;
   font-size: 18px;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  margin-top: 32px;
 }
 
 /* STATS */
@@ -151,7 +149,7 @@ nav {
 
 .section-intro {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 32px auto;
   color: #555;
 }
 
@@ -188,8 +186,10 @@ nav {
 .grid {
   display: grid;
   gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* CARD (Scholars & Volunteers) */
@@ -212,8 +212,9 @@ nav {
 
 .card img {
   width: 100%;
-  height: 260px;
+  height: 280px;
   object-fit: cover;
+  object-position: center;
   border-bottom: 1px solid #eee;
 }
 
@@ -227,6 +228,12 @@ nav {
   margin-bottom: 10px;
   font-size: 22px;
   font-weight: 700;
+}
+
+.card-body p {
+  margin: 4px 0;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 /* PROGRAM CARDS */
@@ -322,6 +329,13 @@ footer {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* SAFETY: Hide any accidental AI labels */
+.ai-badge,
+.ai-label,
+.made-with-ai {
+  display: none !important;
 }
 
 /* RESPONSIVE */

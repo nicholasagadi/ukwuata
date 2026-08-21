@@ -1,258 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ukwuata Global Initiatives</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ukwuata Global Initiatives | We Don't Create Talent. We Unlock It.</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;color:#222;line-height:1.6;background:#F9FBFF}
+  .fade-in{animation:fade .8s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  header{background:#0A1931;color:#fff;padding:14px 4%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+  header a{color:#fff;text-decoration:none;margin-left:18px;font-weight:600;font-size:14px}
+  header a.btn{background:#D4A94E;color:#0A1931;padding:10px 18px;border-radius:8px}
+  .hero{background:linear-gradient(180deg,#0A1931 0%, #12306b 100%);color:#fff;padding:90px 4% 70px;text-align:center}
+  .hero h1{font-size:52px;line-height:1.1;max-width:900px;margin:0 auto 16px;font-weight:900}
+  .hero h1 span{color:#D4A94E}
+  .hero p{max-width:760px;margin:0 auto 28px;font-size:19px;opacity:0.92}
+  .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-row a{padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700}
+  .btn-gold{background:#D4A94E;color:#0A1931}
+  .btn-white{background:#fff;color:#0A1931}
+  .stats{background:#0A1931;color:#fff;padding:28px 4%;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center}
+  .sec{padding:70px 4%;max-width:1200px;margin:0 auto}
+  .sec h2{font-size:36px;color:#0A1931;text-align:center;margin-bottom:8px}
+  .tagline{text-align:center;color:#555;margin-bottom:24px;font-style:italic}
+  .about-content{max-width:900px;margin:0 auto}
+  .scholars{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:32px}
+  .card{background:#fff;border:1px solid #EAF0F8;border-radius:16px;overflow:hidden}
+  .card img{width:100%;height:280px;object-fit:cover;object-position:top}
+  .card .pad{padding:18px}
+  .card .pad h3{color:#0A1931;margin-bottom:4px}
+  .card .pad small{color:#666}
+  footer{background:#0A1931;color:#fff;padding:40px 4%;text-align:center;margin-top:40px}
+</style>
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
+<header>
+  <div style="font-weight:900;letter-spacing:.5px">UKWUATA GLOBAL INITIATIVES</div>
   <nav>
-    <div class="logo">
-      <img src="logo.png" alt="Ukwuata Global Initiatives logo">
-      <div>UKWUATA GLOBAL<br>INITIATIVES</div>
-    </div>
-
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#scholars">Scholars</a>
-      <a href="#programs">Programs</a>
-      <a href="#team">Team</a>
-      <a href="#newsletter">Newsletter</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="#donate">Donate</a>
-    </div>
+    <a href="#about">About</a>
+    <a href="#scholars">Scholars</a>
+    <a href="#donate" class="btn">Donate</a>
   </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero fade-in">
-    <h1>Talent is equally distributed, but opportunity is not.</h1>
-    <p>A 501(c)(3) nonprofit based in South Bend, Indiana — expanding access to global PhD opportunities for exceptional graduates.</p>
-    <div class="hero-actions">
-      <a href="#scholars" class="btn">Meet Our Scholars</a>
-      <a href="#donate" class="btn btn-dark">Support Our Mission</a>
-    </div>
-  </section>
+<section class="hero fade-in">
+  <h1>We Don't Create Talent.<br><span>We Unlock It.</span></h1>
+  <p>A 501(c)(3) nonprofit based in South Bend, Indiana — providing <b>100% free mentorship</b> to exceptional graduates from less-privileged backgrounds worldwide seeking global PhD opportunities.</p>
+  <div class="btn-row">
+    <a href="#donate" class="btn-gold">Donate Now</a>
+    <a href="#scholars" class="btn-white">Meet Our Scholars</a>
+  </div>
+</section>
 
-  <!-- STATS -->
-  <section class="stats fade-in">
-    <div><b id="count-scholars">0</b><br>Scholars</div>
-    <div><b id="count-phd">0</b><br>PhD Placements</div>
-    <div><b id="count-partners">0</b><br>Partners</div>
-  </section>
+<section class="stats fade-in">
+  <div>
+    <div style="font-size:28px;font-weight:800;color:#D4A94E">3</div>
+    <div style="font-weight:700;margin-top:4px">Underprivileged Scholars</div>
+    <div style="font-size:13px;opacity:.8;font-weight:400">Supported & Mentored</div>
+  </div>
+  <div>
+    <div style="font-size:28px;font-weight:800;color:#D4A94E">🌍</div>
+    <div style="font-weight:700;margin-top:4px">Global Access</div>
+    <div style="font-size:13px;opacity:.8;font-weight:400">From Underserved to Global PhDs</div>
+  </div>
+  <div>
+    <div style="font-size:28px;font-weight:800;color:#D4A94E">100%</div>
+    <div style="font-weight:700;margin-top:4px">Free & Volunteer-Led</div>
+    <div style="font-size:13px;opacity:.8;font-weight:400">For Less-Privileged Graduates</div>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="sec about fade-in">
-    <h2>Welcome to Ukwuata Global Initiatives 🎓</h2>
-    <p class="tagline">Talent is equally distributed, but opportunity is not.</p>
-
-    <div class="about-content">
-      <h3>Our Mission</h3>
-      <p>We are a <b>501(c)(3) nonprofit based in South Bend, Indiana</b>, dedicated to bridging the gap between exceptional graduates and global PhD opportunities.</p>
-
-      <h3>Where Our Name Comes From</h3>
-      <p>In Igbo, “Ukwuata” speaks to growth and abundance. One of our co‑founders’ native village in Nigeria was founded by a man named Ukwuata — a symbol of perseverance and legacy.</p>
-
-      <h3>Our Vision</h3>
-      <p>We believe that investing in one scholar means investing in a community. Our work is rooted in global collaboration and academic excellence.</p>
-    </div>
-  </section>
-
-  <!-- SCHOLARS -->
-  <section id="scholars" class="sec fade-in">
-    <h2>🌍 Meet Our Outstanding Scholars</h2>
-    <p class="section-intro">These scholars exemplify excellence, resilience, and global ambition.</p>
-
-    <div class="grid">
-      <article class="card">
-        <img src="scholar1.jpg" alt="Chinoye">
-        <div class="card-body">
-          <h3>Chinoye</h3>
-          <p><b>B.Eng, Marine Engineering</b> — Nigeria Maritime University</p>
-          <p><b>PhD Candidate, Mechanical Engineering</b> — University of Delaware (USA)</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="scholar2.jpg" alt="Nneka">
-        <div class="card-body">
-          <h3>Nneka</h3>
-          <p><b>B.Sc, Marine Geology</b> — Nigeria Maritime University</p>
-          <p><b>M.Sc Student, Geology</b> — University of Kansas (USA)</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="scholar3.jpg" alt="Daniel">
-        <div class="card-body">
-          <h3>Daniel</h3>
-          <p><b>B.Sc, Chemistry</b> — Michael Okpara University of Agriculture</p>
-          <p><b>MPhil, Advanced Materials for the Energy Transition</b> — University of Cambridge (UK)</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- PROGRAMS -->
-  <section id="programs" class="sec fade-in">
-    <h2>📚 Our Programs</h2>
-    <p class="section-intro">UGI provides structured support to help exceptional graduates access global academic opportunities.</p>
-
-    <div class="grid">
-      <article class="prog">
-        <h3>Graduate School Mentorship</h3>
-        <p>One‑on‑one guidance for scholars preparing for competitive PhD and master’s programs worldwide.</p>
-      </article>
-
-      <article class="prog">
-        <h3>Career Services</h3>
-        <p>Resume building, interview preparation, networking strategies, and professional coaching.</p>
-      </article>
-
-      <article class="prog">
-        <h3>Financial Assistance</h3>
-        <p>Support for exam fees, applications, credential evaluations, and essential academic expenses.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- VOLUNTEERS -->
-  <section id="team" class="sec team fade-in">
-    <h2>🤝 Meet Our Volunteer Team</h2>
-    <p class="section-intro">Our volunteers bring academic excellence, professional experience, and a deep commitment to mentorship.</p>
-
-    <div class="grid">
-      <article class="card">
-        <img src="volunteer1.jpg" alt="Zodo Agadi">
-        <div class="card-body">
-          <h3>Zodo Agadi</h3>
-          <p>BSc in Economics — University of Nigeria, Nsukka</p>
-          <p>MBA & MS in Computer Information Systems — Southern Illinois University Edwardsville</p>
-          <p>MS in Applied Computational Mathematics & Statistics — University of Notre Dame</p>
-          <p>Data Scientist (Industry)</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="volunteer2.jpg" alt="Philip Àlàbí">
-        <div class="card-body">
-          <h3>Philip Àlàbí</h3>
-          <p>BSc(ED), Industrial Chemistry — TAI Solarin University of Education</p>
-          <p>MS, Chemistry — Southern Illinois University Edwardsville</p>
-          <p>MA & PhD, Organic Chemistry — Brown University</p>
-          <p>Scientist (Industry)</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="volunteer3.jpg" alt="Elizabeth Agadi">
-        <div class="card-body">
-          <h3>Elizabeth Agadi</h3>
-          <p>BS, Biochemistry — University of Notre Dame</p>
-          <p>PhD, Integrated Biomedical Sciences — University of Notre Dame</p>
-          <p>Former Graduate Career Consultant — University of Notre Dame</p>
-          <p>Volunteer & Parent</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section id="newsletter" class="sec fade-in" style="background:#F7F9FC;">
-    <h2>📬 Join Our Newsletter</h2>
-    <p class="section-intro">Stay updated on scholar achievements and new opportunities.</p>
-
-    <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit" class="btn">Subscribe</button>
-    </form>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="sec contact fade-in">
-    <h2>Contact Us</h2>
-    <p class="section-intro">
-      South Bend, IN • info@ukwuataglobal.org<br>
-      Facebook: <a href="https://www.facebook.com/profile.php?id=61593061477539" target="_blank">Visit Page</a><br>
-      LinkedIn: <a href="https://www.linkedin.com/company/143236925/admin/dashboard/" target="_blank">Visit Page</a><br>
-      Interest Form: <a href="https://docs.google.com/forms/d/15KfZbmksLdFtuMxmnSCggL28GSz-iez7ZYk6-_sutj8/edit?ts=6a66a549#question=791772419&field=719506980" target="_blank">Complete Form</a>
+<section id="about" class="sec about fade-in">
+  <h2>Our Mission 🎓</h2>
+  <p class="tagline">Talent is equally distributed, but opportunity is not.</p>
+  <div class="about-content">
+    <p style="font-size:19px;color:#0A1931;font-weight:600;line-height:1.6;margin:24px auto;text-align:center">
+      Ukwuata Global Initiatives Inc. removes financial and informational barriers preventing competitive, under-resourced graduates worldwide from accessing fully-funded PhDs and high-skill global opportunities.
     </p>
-
-    <div class="hero-actions">
-      <a class="btn btn-dark" href="mailto:info@ukwuataglobal.org">Send Message</a>
+    <p style="font-size:17px;color:#333;text-align:left;margin-top:28px">
+      Thousands earn top honors in STEM and health sciences yearly but never apply to doctoral programs in the US, Canada, and Europe due to application fees and lack of mentorship. We bridge that gap through:
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;text-align:left;margin:32px 0">
+      <div style="background:#fff;padding:20px;border-radius:12px;border:1px solid #EAF0F8">
+        <h3 style="margin-top:0;color:#0A1931">1. Knowledge Transfer</h3>
+        <p style="margin-bottom:0;font-size:15px">Mentorship and guidance to navigate global PhD applications.</p>
+      </div>
+      <div style="background:#fff;padding:20px;border-radius:12px;border:1px solid #EAF0F8">
+        <h3 style="margin-top:0;color:#0A1931">2. Career Services</h3>
+        <p style="margin-bottom:0;font-size:15px">Resume, interviews, networking and professional coaching.</p>
+      </div>
+      <div style="background:#fff;padding:20px;border-radius:12px;border:1px solid #EAF0F8">
+        <h3 style="margin-top:0;color:#0A1931">3. Financial Access</h3>
+        <p style="margin-bottom:0;font-size:15px">Support for fees, exams, and credential evaluations.</p>
+      </div>
     </div>
-  </section>
-
-  <!-- DONATE -->
-  <section id="donate" class="sec donate fade-in">
-    <h2>❤️ Support Our Mission</h2>
-    <p class="section-intro">Your generosity helps exceptional scholars access global opportunities.</p>
-    <div class="hero-actions">
-      <a class="btn" href="#">Donate Today</a>
+    <div style="background:#EAF0F8;padding:24px;border-radius:12px;margin-top:32px;text-align:center">
+      <h3 style="margin-top:0;color:#0A1931">Our Vision</h3>
+      <p style="font-size:17px;margin-bottom:8px;font-weight:600">Birthplace and income do not determine access to global research training.</p>
+      <p style="font-size:18px;margin-bottom:0;font-style:italic;font-weight:800;color:#0A1931">We don't create talent. We unlock it.</p>
     </div>
-    <p class="donate-note">UGI is a registered 501(c)(3). All donations are tax‑deductible.</p>
-  </section>
+    <h3 style="margin-top:36px;text-align:left;color:#0A1931">Where Our Name Comes From</h3>
+    <p style="text-align:left">“Ukwuata” speaks to growth and abundance. It is a symbol of perseverance, legacy, and the abundance that comes from nurturing talent where it is most often overlooked.</p>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#scholars">Scholars</a>
-      <a href="#team">Team</a>
-      <a href="#programs">Programs</a>
-      <a href="#donate">Donate</a>
+<section id="scholars" class="sec fade-in">
+  <h2>Our Pilot Scholars</h2>
+  <p class="tagline">Exceptional graduates from less-privileged backgrounds we currently support</p>
+  <div class="scholars">
+    <div class="card">
+      <img src="images/scholar1.jpg" alt="Scholar 1" style="object-position:top center">
+      <div class="pad"><h3>Scholar 1</h3><small>Biochemistry & Molecular Biology | PhD Applicant</small><p style="margin-top:8px;font-size:14px">Top honors graduate, aspiring researcher in health sciences.</p></div>
     </div>
-
-    <div class="social-icons">
-      <a href="https://www.facebook.com/profile.php?id=61593061477539" target="_blank">🔵</a>
-      <a href="https://www.linkedin.com/company/143236925/admin/dashboard/" target="_blank">💼</a>
+    <div class="card">
+      <img src="images/scholar2.jpg" alt="Daniel" style="object-position:top center">
+      <div class="pad"><h3>Daniel</h3><small>Maritime Engineering | PhD Applicant</small><p style="margin-top:8px;font-size:14px">Competitive graduate bridging to US PhD programs.</p></div>
     </div>
+    <div class="card">
+      <img src="images/scholar3.jpg" alt="Scholar 3" style="object-position:top center">
+      <div class="pad"><h3>Scholar 3</h3><small>STEM Researcher | PhD Applicant</small><p style="margin-top:8px;font-size:14px">Focused on fully-funded doctoral opportunities.</p></div>
+    </div>
+  </div>
+</section>
 
-    <p>© 2026 Ukwuata Global Initiatives • South Bend, IN • 501(c)(3)</p>
-  </footer>
+<section id="donate" class="sec fade-in" style="text-align:center;background:#fff;border-top:1px solid #EAF0F8;border-bottom:1px solid #EAF0F8">
+  <h2>Support Our Mission</h2>
+  <p style="max-width:600px;margin:16px auto">Your donation removes application fees, funds transcript evaluations, and connects under-resourced talent to global research training.</p>
+  <a href="#" class="btn-gold" style="display:inline-block;margin-top:16px;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:800;color:#0A1931">Donate via Zeffy</a>
+</section>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('show');
-    }
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    function animateCounter(id, target) {
-      let count = 0;
-      const speed = target / 80;
-      const update = () => {
-        count += speed;
-        if (count < target) {
-          document.getElementById(id).innerText = Math.floor(count);
-          requestAnimationFrame(update);
-        } else {
-          document.getElementById(id).innerText = target;
-        }
-      };
-      update();
-    }
-
-    window.addEventListener('load', () => {
-      animateCounter('count-scholars', 200);
-      animateCounter('count-phd', 30);
-      animateCounter('count-partners', 15);
-    });
-  </script>
+<footer>
+  <div style="font-weight:900">UKWUATA GLOBAL INITIATIVES INC.</div>
+  <div style="margin-top:8px;opacity:.8;font-size:14px">501(c)(3) Nonprofit • South Bend, Indiana • EIN: XX-XXXXXXX</div>
+  <div style="margin-top:8px;opacity:.8;font-size:13px">© 2026 Ukwuata Global Initiatives. We don't create talent. We unlock it.</div>
+</footer>
 
 </body>
 </html>

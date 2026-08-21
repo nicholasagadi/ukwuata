@@ -6,6 +6,7 @@
   <title>Ukwuata Global Initiatives</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -14,10 +15,16 @@
       <img src="logo.png" alt="Ukwuata Global Initiatives logo">
       <div>UKWUATA GLOBAL<br>INITIATIVES</div>
     </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#scholars">Scholars</a>
       <a href="#programs">Programs</a>
+      <a href="#opportunity">Opportunity</a>
       <a href="#team">Team</a>
       <a href="#testimonials">Impact</a>
       <a href="#contact">Contact</a>
@@ -25,239 +32,225 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+  <!-- HERO -->
+  <section class="hero fade-in">
     <h1>Talent is equally distributed, but opportunity is not.</h1>
-    <p>
-      A 501(c)(3) nonprofit based in South Bend, Indiana — expanding access to global PhD opportunities for exceptional graduates.
-    </p>
+    <p>A 501(c)(3) nonprofit based in South Bend, Indiana — expanding access to global PhD opportunities for exceptional graduates.</p>
     <div class="hero-actions">
       <a href="#scholars" class="btn">Meet Our Scholars</a>
       <a href="#donate" class="btn btn-dark">Support Our Mission</a>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div><b>200+</b><br>Scholars</div>
-    <div><b>30+</b><br>PhD Placements</div>
-    <div><b>15+</b><br>Partners</div>
+  <!-- STATS WITH ANIMATED COUNTERS -->
+  <section class="stats fade-in">
+    <div><b id="count-scholars">0</b><br>Scholars</div>
+    <div><b id="count-phd">0</b><br>PhD Placements</div>
+    <div><b id="count-partners">0</b><br>Partners</div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" class="sec about">
+  <!-- ABOUT -->
+  <section id="about" class="sec about fade-in">
     <h2>Welcome to Ukwuata Global Initiatives 🎓</h2>
     <p class="tagline">Talent is equally distributed, but opportunity is not.</p>
 
     <div class="about-content">
       <h3>Our Mission</h3>
-      <p>
-        We are a <b>501(c)(3) nonprofit based in South Bend, Indiana</b>, dedicated to bridging the gap between exceptional graduates and global PhD opportunities.
-        Through mentorship, career services, and financial assistance, we help scholars overcome barriers and access world‑class academic pathways.
-      </p>
+      <p>We are a <b>501(c)(3) nonprofit based in South Bend, Indiana</b>, dedicated to bridging the gap between exceptional graduates and global PhD opportunities.</p>
 
       <h3>Where Our Name Comes From</h3>
-      <p>
-        In Igbo, “Ukwuata” speaks to growth and abundance. One of our co‑founders’ native village in Nigeria was founded by a man named Ukwuata — a symbol of perseverance, community, and legacy.
-        We honor his name by supporting scholars whose futures will uplift families, nations, and the world.
-      </p>
+      <p>In Igbo, “Ukwuata” speaks to growth and abundance. One of our co‑founders’ native village in Nigeria was founded by a man named Ukwuata — a symbol of perseverance and legacy.</p>
 
       <h3>Our Vision</h3>
-      <p>
-        We believe that investing in one scholar means investing in a community. Our work is rooted in the belief that global collaboration, academic excellence, and equitable access create a better future for everyone.
-        Follow our journey and join us in expanding access to life‑changing opportunities.
-      </p>
+      <p>We believe that investing in one scholar means investing in a community. Our work is rooted in global collaboration and academic excellence.</p>
     </div>
   </section>
 
-  <!-- SCHOLARS SECTION -->
-  <section id="scholars" class="sec">
+  <!-- SCHOLARS -->
+  <section id="scholars" class="sec fade-in">
     <h2>🌍 Meet Our Outstanding Scholars</h2>
-    <p class="section-intro">
-      These scholars exemplify excellence, resilience, and global ambition. UGI proudly supports their academic journeys.
-    </p>
+    <p class="section-intro">These scholars exemplify excellence, resilience, and global ambition.</p>
 
     <div class="grid">
-      <!-- Chinoye -->
       <article class="card">
-        <img src="scholar1.jpg" alt="Portrait of Chinoye, PhD Candidate in Mechanical Engineering">
+        <img src="scholar1.jpg" alt="Chinoye">
         <div class="card-body">
           <h3>Chinoye</h3>
           <p><b>B.Eng, Marine Engineering</b><br>Nigeria Maritime University</p>
           <p>PhD Candidate, Mechanical Engineering<br>University of Delaware (USA)</p>
-          <p>
-            Chinoye demonstrated exceptional academic strength and research aptitude. UGI supported her with career services and financial assistance as she advanced toward her PhD.
-          </p>
         </div>
       </article>
 
-      <!-- Nneka -->
       <article class="card">
-        <img src="scholar2.jpg" alt="Portrait of Nneka, M.Sc Student in Geology">
+        <img src="scholar2.jpg" alt="Nneka">
         <div class="card-body">
           <h3>Nneka</h3>
           <p><b>B.Sc, Marine Geology</b><br>Nigeria Maritime University</p>
           <p>M.Sc Student, Geology<br>University of Kansas (USA)</p>
-          <p>
-            Nneka is pursuing graduate research in geology and plans to continue into the PhD program. UGI supported her journey with mentorship and financial assistance.
-          </p>
         </div>
       </article>
 
-      <!-- Daniel -->
       <article class="card">
-        <img src="scholar3.jpg" alt="Portrait of Daniel, MPhil Student at University of Cambridge">
+        <img src="scholar3.jpg" alt="Daniel">
         <div class="card-body">
           <h3>Daniel</h3>
-          <p><b>B.Sc, Chemistry</b><br>Michael Okpara University of Agriculture</p>
-          <p>MPhil, Advanced Materials for the Energy Transition<br>University of Cambridge (UK)</p>
-          <p>
-            Daniel will begin his advanced master’s at Cambridge and plans to pursue a PhD. UGI supported him in overcoming barriers to global graduate opportunities.
-          </p>
+          <p><b>B.Sc, Chemistry</b><br>Michael Okpara University</p>
+          <p>MPhil, Advanced Materials<br>University of Cambridge (UK)</p>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- PROGRAMS SECTION -->
-  <section id="programs" class="sec">
+  <!-- PROGRAMS -->
+  <section id="programs" class="sec fade-in">
     <h2>📚 Our Programs</h2>
-    <p class="section-intro">
-      UGI provides structured support to help exceptional graduates access global academic opportunities.
-    </p>
+    <p class="section-intro">UGI provides structured support to help exceptional graduates access global academic opportunities.</p>
 
     <div class="grid">
       <article class="prog">
         <h3>Graduate School Mentorship</h3>
-        <p>
-          One‑on‑one guidance for scholars preparing for competitive PhD and master’s programs worldwide.
-          Includes CV reviews, statement editing, and application strategy.
-        </p>
+        <p>One‑on‑one guidance for scholars preparing for competitive PhD and master’s programs worldwide.</p>
       </article>
 
       <article class="prog">
         <h3>Career Services</h3>
-        <p>
-          Professional development support including resume building, interview preparation,
-          networking strategies, and industry‑specific coaching.
-        </p>
+        <p>Resume building, interview preparation, networking strategies, and professional coaching.</p>
       </article>
 
       <article class="prog">
         <h3>Financial Assistance</h3>
-        <p>
-          Targeted support for exam fees, application costs, credential evaluations,
-          and essential expenses that often block access to global opportunities.
-        </p>
+        <p>Support for exam fees, applications, credential evaluations, and essential academic expenses.</p>
       </article>
     </div>
   </section>
 
-  <!-- VOLUNTEER TEAM SECTION -->
-  <section id="team" class="sec team">
-    <h2>🤝 Meet Our Volunteer Team</h2>
-    <p class="section-intro">
-      Our volunteers bring academic excellence, professional experience, and a deep commitment to mentorship.
-    </p>
+  <!-- HOW WE CREATE OPPORTUNITY -->
+  <section id="opportunity" class="sec fade-in" style="background:#F7F9FC;">
+    <h2>✨ How We Create Opportunity</h2>
+    <p class="section-intro">We partner with universities, mentors, and global organizations to open doors for scholars.</p>
 
     <div class="grid">
-      <!-- Zodo -->
+      <article class="prog">
+        <h3>Mentorship Programs</h3>
+        <p>Experienced mentors guide scholars through academic, research, and professional pathways.</p>
+      </article>
+
+      <article class="prog">
+        <h3>Scholarships & Grants</h3>
+        <p>Funding for academic growth, exam fees, applications, and essential educational expenses.</p>
+      </article>
+
+      <article class="prog">
+        <h3>Career Pathways</h3>
+        <p>Professional profile building, interview preparation, and access to global opportunities.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- VOLUNTEERS -->
+  <section id="team" class="sec team fade-in">
+    <h2>🤝 Meet Our Volunteer Team</h2>
+    <p class="section-intro">Our volunteers bring academic excellence and a deep commitment to mentorship.</p>
+
+    <div class="grid">
       <article class="card">
-        <img src="volunteer1.jpg" alt="Portrait of Zodo Agadi, Data Scientist">
+        <img src="volunteer1.jpg" alt="Zodo">
         <div class="card-body">
           <h3>Zodo Agadi</h3>
-          <p><b>BSc, Economics</b> — University of Nigeria, Nsukka</p>
-          <p><b>MBA & MS, Computer Information Systems</b> — Southern Illinois University Edwardsville</p>
-          <p><b>MS, Applied Computational Mathematics & Statistics</b> — University of Notre Dame</p>
           <p>Data Scientist (Industry)</p>
         </div>
       </article>
 
-      <!-- Philip -->
       <article class="card">
-        <img src="volunteer2.jpg" alt="Portrait of Philip Àlàbí, Scientist">
+        <img src="volunteer2.jpg" alt="Philip">
         <div class="card-body">
           <h3>Philip Àlàbí</h3>
-          <p><b>BSc(ED), Industrial Chemistry</b> — TAI Solarin University of Education</p>
-          <p><b>MS, Chemistry</b> — Southern Illinois University Edwardsville</p>
-          <p><b>MA & PhD, Organic Chemistry</b> — Brown University</p>
           <p>Scientist (Industry)</p>
         </div>
       </article>
 
-      <!-- Elizabeth -->
       <article class="card">
-        <img src="volunteer3.jpg" alt="Portrait of Elizabeth Agadi, PhD in Biomedical Sciences">
+        <img src="volunteer3.jpg" alt="Elizabeth">
         <div class="card-body">
           <h3>Elizabeth Agadi</h3>
-          <p><b>BS, Biochemistry</b> — University of Notre Dame</p>
-          <p><b>PhD, Integrated Biomedical Sciences</b> — University of Notre Dame</p>
-          <p>Former Graduate Career Consultant, Notre Dame<br>Volunteer & Parent</p>
+          <p>Volunteer & Parent</p>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- TESTIMONIALS SECTION -->
-  <section id="testimonials" class="sec testimonials">
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="sec testimonials fade-in">
     <h2>💬 Impact Stories</h2>
-    <p class="section-intro">
-      Real voices from scholars whose lives and futures have been transformed through UGI.
-    </p>
+    <p class="section-intro">Real voices from scholars whose lives have been transformed.</p>
 
     <div class="grid">
       <article class="card testimonial-card">
         <div class="card-body">
-          <p class="quote">
-            “UGI helped me believe in my potential and guided me through every step of my PhD journey.”
-          </p>
+          <p class="quote">“UGI helped me believe in my potential.”</p>
           <h4>— Chinoye</h4>
         </div>
       </article>
 
       <article class="card testimonial-card">
         <div class="card-body">
-          <p class="quote">
-            “Without UGI’s mentorship and financial support, I would not be pursuing graduate studies abroad.”
-          </p>
+          <p class="quote">“Without UGI’s mentorship, I wouldn’t be studying abroad.”</p>
           <h4>— Nneka</h4>
         </div>
       </article>
 
       <article class="card testimonial-card">
         <div class="card-body">
-          <p class="quote">
-            “UGI opened doors I didn’t know existed. Their guidance changed the trajectory of my career.”
-          </p>
+          <p class="quote">“UGI opened doors I didn’t know existed.”</p>
           <h4>— Daniel</h4>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="sec contact">
+  <!-- PARTNER UNIVERSITIES -->
+  <section id="partners" class="sec fade-in">
+    <h2>🏛️ Our University Partners</h2>
+    <p class="section-intro">We collaborate with leading institutions worldwide.</p>
+
+    <div class="grid partners-grid">
+      <div class="partner-card">University of Delaware</div>
+      <div class="partner-card">University of Kansas</div>
+      <div class="partner-card">University of Cambridge</div>
+      <div class="partner-card">Notre Dame</div>
+      <div class="partner-card">Southern Illinois University</div>
+      <div class="partner-card">Brown University</div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="sec fade-in" style="background:#F7F9FC;">
+    <h2>📬 Join Our Newsletter</h2>
+    <p class="section-intro">Stay updated on scholar achievements and new opportunities.</p>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="sec contact fade-in">
     <h2>Contact Us</h2>
-    <p class="section-intro">
-      South Bend, IN • info@ukwuataglobal.org • Facebook: Message Us
-    </p>
+    <p class="section-intro">South Bend, IN • info@ukwuataglobal.org</p>
     <div class="hero-actions">
       <a class="btn btn-dark" href="mailto:info@ukwuataglobal.org">Send Message</a>
     </div>
   </section>
 
-  <!-- DONATE SECTION -->
-  <section id="donate" class="sec donate">
+  <!-- DONATE -->
+  <section id="donate" class="sec donate fade-in">
     <h2>❤️ Support Our Mission</h2>
-    <p class="section-intro">
-      Your generosity helps exceptional scholars access global opportunities that change lives and communities.
-    </p>
+    <p class="section-intro">Your generosity helps exceptional scholars access global opportunities.</p>
     <div class="hero-actions">
-      <a class="btn" href="https://your-donation-link.com">Donate Today</a>
+      <a class="btn" href="#">Donate Today</a>
     </div>
-    <p class="donate-note">
-      UGI is a registered 501(c)(3). All donations are tax‑deductible.
-    </p>
+    <p class="donate-note">UGI is a registered 501(c)(3). All donations are tax‑deductible.</p>
   </section>
 
   <!-- FOOTER -->
@@ -269,9 +262,51 @@
       <a href="#programs">Programs</a>
       <a href="#donate">Donate</a>
     </div>
+
+    <div class="social-icons">
+      <a href="#">🔵</a>
+      <a href="#">🐦</a>
+      <a href="#">💼</a>
+    </div>
+
     <p>© 2026 Ukwuata Global Initiatives • South Bend, IN • 501(c)(3)</p>
-    <p>Contact: info@ukwuataglobal.org • Facebook: Message Us</p>
   </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    function animateCounter(id, target) {
+      let count = 0;
+      const speed = target / 80;
+      const update = () => {
+        count += speed;
+        if (count < target) {
+          document.getElementById(id).innerText = Math.floor(count);
+          requestAnimationFrame(update);
+        } else {
+          document.getElementById(id).innerText = target;
+        }
+      };
+      update();
+    }
+
+    window.addEventListener('load', () => {
+      animateCounter('count-scholars', 200);
+      animateCounter('count-phd', 30);
+      animateCounter('count-partners', 15);
+    });
+  </script>
 
 </body>
 </html>

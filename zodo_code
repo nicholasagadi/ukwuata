@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ukwuata Global Initiatives</title>
+<style>
+body{margin:0;font-family:Inter,Arial,sans-serif;color:#0A1F3D}
+nav{background:#0A1931;color:white;display:flex;justify-content:space-between;align-items:center;padding:16px 5%;position:sticky;top:0}
+nav .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px;line-height:1.1}
+nav a{color:white;text-decoration:none;margin:0 14px;font-size:14px}
+.btn-gold{background:#D4A94E;color:#0A1931;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700}
+.hero{text-align:center;padding:60px 5% 40px}
+.hero h1{font-size:42px;margin:0}
+.hero p{color:#555;max-width:700px;margin:14px auto 24px}
+.stats{background:#D6E3F8;display:flex;justify-content:space-around;padding:24px;text-align:center}
+.stats b{font-size:32px;display:block}
+.section{padding:50px 5%;text-align:center}
+.cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.card{border:1px solid #eee;border-radius:12px;padding:20px;width:280px;background:white;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.team{background:#F3F3F3;padding:50px 5%;text-align:center}
+footer{background:#0A1931;color:white;padding:20px 5%;font-size:12px;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">🎓 UKWUATA GLOBAL<br>INITIATIVES</div>
+<div><a href="#about">About</a><a href="#programs">Programs</a><a href="#scholars">Scholars</a><a href="#team">Volunteer</a><a href="#contact">Contact</a><a class="btn-gold" href="#donate">Donate</a></div>
+</nav>
+
+<div class="hero">
+<h1>Talent is equally distributed, but opportunity is not.</h1>
+<p>We partner with universities and mentors to connect talented African scholars with life-changing academic and career opportunities worldwide.</p>
+<a class="btn-gold" style="background:#0A1931;color:white;margin-right:10px" href="#programs">Explore Our Programs</a>
+<a style="border:1px solid #0A1931;padding:10px 22px;border-radius:6px;text-decoration:none;color:#0A1931;font-weight:700" href="#scholars">Meet Our Scholars</a>
+</div>
+
+<div class="stats">
+<div><b>200+</b>Scholars</div>
+<div><b>30+</b>PhD Placements</div>
+<div><b>15+</b>University Partners</div>
+</div>
+
+<div class="section" id="programs">
+<h2>How We Create Opportunity</h2>
+<p style="color:#666">Our model combines mentorship, funding, and partnerships to create pathways for academic success.</p>
+<div class="cards">
+<div class="card"><h3>Mentorship Programs</h3><p>One-on-one mentorship connecting scholars with academics to guide research and career growth.</p></div>
+<div class="card"><h3>Scholarships & Grants</h3><p>Financial support for tuition, research, and conference travel to remove barriers.</p></div>
+<div class="card"><h3>Career Pathways</h3><p>Internship placements and PhD pipeline support with partner universities globally.</p></div>
+</div>
+</div>
+
+<div class="team" id="team">
+<h2>Meet Our Volunteer Team</h2>
+<p>A dedicated group of mentors, faculty, and professionals volunteering their time.</p>
+<div class="cards">
+<div class="card"><b>Zodo Agadi</b><br>Mentor • Data Science<br><small>BSc Econ UNN, MBA & MS SIUE, MS Notre Dame</small></div>
+<div class="card"><b>Elizabeth Agadi, PhD</b><br>Mentor • Biomedical<br><small>PhD Notre Dame</small></div>
+<div class="card"><b>Philip Alabi, PhD</b><br>Mentor • Chemistry<br><small>PhD Brown University</small></div>
+</div>
+<div class="cards" style="margin-top:20px">
+<div class="card"><b>Chinoye</b><br>PhD Mechanical Eng<br><small>University of Delaware, USA</small></div>
+<div class="card"><b>Nneka</b><br>MSc Geology<br><small>University of Kansas, USA</small></div>
+<div class="card"><b>Daniel</b><br>MPhil Materials<br><small>University of Cambridge, UK</small></div>
+</div>
+</div>
+
+<footer><div>© 2024 Ukwuata Global Initiatives • A registered nonprofit</div><div>Privacy Policy • Contact • Newsletter</div></footer>
+</body>
+</html>

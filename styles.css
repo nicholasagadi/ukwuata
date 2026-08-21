@@ -1,19 +1,46 @@
-/* GLOBAL RESET */
-* {
-  box-sizing: border-box;
+/* ===========================
+   TOKENS / UTILITIES
+=========================== */
+:root {
+  --primary: #0A1931;
+  --accent: #D4A94E;
+  --soft: #F7F9FC;
+  --radius-lg: 16px;
+  --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+
+  --bg: #ffffff;
+  --text: #0A1931;
+  --surface: #F7F9FC;
 }
 
 body {
-  margin: 0;
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Inter', Arial, sans-serif;
-  color: #0A1931;
-  background: #fff;
+  margin: 0;
   line-height: 1.6;
 }
 
-/* NAVBAR */
+.dark-mode {
+  --bg: #050814;
+  --text: #F7F9FC;
+  --surface: #0A1931;
+}
+
+.text-center { text-align: center; }
+.max-w-700 { max-width: 700px; margin: 0 auto; }
+
+.grid-3 {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 nav {
-  background: #0A1931;
+  background: var(--primary);
   color: #fff;
   padding: 16px 4%;
   display: flex;
@@ -39,7 +66,6 @@ nav {
   padding: 4px;
 }
 
-/* HAMBURGER MENU */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -61,10 +87,18 @@ nav {
   font-weight: 600;
 }
 
+.dark-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
+  .hamburger { display: flex; }
 
   .nav-links {
     display: none;
@@ -73,9 +107,7 @@ nav {
     margin-top: 12px;
   }
 
-  .nav-links.show {
-    display: flex;
-  }
+  .nav-links.show { display: flex; }
 
   .nav-links a {
     padding: 12px 0;
@@ -83,10 +115,12 @@ nav {
   }
 }
 
-/* BUTTONS */
+/* ===========================
+   BUTTONS
+=========================== */
 .btn {
-  background: #D4A94E;
-  color: #0A1931;
+  background: var(--accent);
+  color: var(--primary);
   padding: 12px 26px;
   border-radius: 30px;
   text-decoration: none;
@@ -101,7 +135,7 @@ nav {
 }
 
 .btn-dark {
-  background: #0A1931;
+  background: var(--primary);
   color: #fff;
 }
 
@@ -110,99 +144,114 @@ nav {
   transform: translateY(-2px);
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 90px 4%;
-  background: #F9FBFF;
+/* ===========================
+   HERO (Equiti-style)
+=========================== */
+.hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 40px;
+  padding: 80px 6%;
+  background: var(--primary);
+  color: #fff;
 }
 
-.hero h1 {
-  font-size: 44px;
-  font-weight: 800;
-  max-width: 800px;
-  margin: 0 auto;
+.hero-left h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 18px;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: 20px auto;
-  color: #555;
-  font-size: 18px;
-}
-
-/* STATS */
-.stats {
-  background: #D6E3F8;
-  display: flex;
-  justify-content: space-around;
-  padding: 24px 4%;
-  text-align: center;
-  font-size: 18px;
-}
-
-/* SECTIONS */
-.sec {
-  padding: 70px 5%;
-  text-align: center;
-}
-
-.section-intro {
-  max-width: 700px;
-  margin: 0 auto 32px auto;
-  color: #555;
-}
-
-/* ABOUT */
-.about {
-  background: #F7F9FC;
-}
-
-.about .tagline {
-  font-style: italic;
-  font-weight: 600;
-  color: #555;
-  margin-top: 10px;
-}
-
-.about-content {
-  margin-top: 36px;
-  font-size: 17px;
-  color: #333;
-  text-align: left;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about-content h3 {
-  color: #0A1931;
-  font-size: 22px;
+.hero-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  color: var(--accent);
   margin-bottom: 10px;
+}
+
+.hero-sub {
+  max-width: 520px;
+  font-size: 17px;
+  color: #D6E3F8;
+  margin-bottom: 24px;
+}
+
+.hero-actions .btn {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
   margin-top: 28px;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  justify-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
+.hero-stats strong {
+  font-size: 22px;
+  color: var(--accent);
 }
 
-/* CARD (Scholars & Volunteers) */
+.hero-right img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 900px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    padding: 60px 5%;
+  }
+  .hero-right { order: -1; }
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.stagger-card {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.stagger-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   CARDS
+=========================== */
 .card {
   background: #fff;
-  border-radius: 16px;
-  padding: 0;
+  border-radius: var(--radius-lg);
   border: 1px solid #eee;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  width: 100%;
   max-width: 320px;
   display: flex;
   flex-direction: column;
@@ -213,36 +262,36 @@ nav {
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-/* ⭐ OPTION 2 — FIX HEAD CROPPING */
 .card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  object-position: top; /* keeps head fully visible */
+  object-position: top;
   border-bottom: 1px solid #eee;
 }
 
 .card-body {
   padding: 20px;
-  text-align: left;
   flex: 1;
 }
 
 .card-body h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   font-size: 22px;
   font-weight: 700;
 }
 
-.card-body p {
-  margin: 4px 0;
-  font-size: 15px;
-  line-height: 1.5;
+/* ===========================
+   SECTIONS
+=========================== */
+.sec {
+  padding: 70px 5%;
+  text-align: center;
+  background: var(--surface);
 }
 
-/* PROGRAM CARDS */
-.prog {
-  background: #fff;
-  border-radius: 16px;
-  padding
+footer {
+  background: var(--surface);
+  padding: 40px;
+  text-align: center;
+}

@@ -3,8 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ukwuata Global Initiatives</title>
+
+  <title>Ukwuata Global Initiatives | Global PhD Mentorship Nonprofit</title>
+
+  <meta name="description"
+        content="Ukwuata Global Initiatives is a 501(c)(3) nonprofit helping exceptional graduates access global PhD opportunities through mentorship, career support, and financial assistance.">
+
+  <meta name="keywords"
+        content="nonprofit, PhD mentorship, graduate school, scholarships, South Bend, global education, African scholars">
+
+  <meta name="author" content="Ukwuata Global Initiatives">
+  <link rel="canonical" href="https://www.ukwuataglobal.org/">
+
+  <meta property="og:title" content="Ukwuata Global Initiatives">
+  <meta property="og:description" content="Empowering exceptional graduates with global academic opportunities.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="hero-group.jpg">
+
   <link rel="stylesheet" href="styles.css">
+  <style>
+
+    /* ===========================
+       TOKENS / UTILITIES
+    ============================ */
+    :root {
+      --primary: #0A1931;
+      --accent: #D4A94E;
+      --soft: #F7F9FC;
+      --radius-lg: 16px;
+      --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+
+      --bg: #ffffff;
+      --text: #0A1931;
+      --surface: #F7F9FC;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .dark-mode {
+      --bg: #050814;
+      --text: #F7F9FC;
+      --surface: #0A1931;
+    }
+
+    .text-center { text-align: center; }
+    .max-w-700 { max-width: 700px; margin: 0 auto; }
+    .grid-3 {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    /* ===========================
+       NAVBAR
+    ============================ */
+    nav {
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 800;
+    }
+
+    .logo img {
+      height: 48px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 4px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      margin: 6px 14px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .dark-toggle {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .nav-links.show { display: flex; }
+
+      .nav-links a {
+        padding: 12px 0;
+        border-top: 1px solid rgba(255,255,255,0.2);
+      }
+    }
+
+    /* ===========================
+       BUTTONS
+    ============================ */
+    .btn {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 12px 26px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-block;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #c89a3f;
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: #08152b;
+      transform: translateY(-2px);
+    }
+
+    /* ===========================
+       HERO (NEW EQUITI STYLE)
+    ============================ */
+    .hero-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
+      padding: 80px 6%;
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .hero-left h1 {
+      font-size: 40px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .hero-sub {
+      max-width: 520px;
+      font-size: 17px;
+      color: #D6E3F8;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions .btn {
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .hero-stats strong {
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    .hero-right img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    @media (max-width: 900px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        padding: 60px 5%;
+      }
+      .hero-right { order: -1; }
+    }
+
+    /* ===========================
+       ANIMATIONS
+    ============================ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .slide-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .stagger-card {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .stagger-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===========================
+       CARDS
+    ============================ */
+    .card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      border: 1px solid #eee;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: top;
+      border-bottom: 1px solid #eee;
+    }
+
+    .card-body {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .card-body h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    /* ===========================
+       SECTIONS
+    ============================ */
+    .sec {
+      padding: 70px 5%;
+      text-align: center;
+      background: var(--surface);
+    }
+
+    footer {
+      background: var(--surface);
+      padding: 40px;
+      text-align: center;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -15,6 +331,8 @@
       <img src="logo.png" alt="Ukwuata Global Initiatives logo">
       <div>UKWUATA GLOBAL<br>INITIATIVES</div>
     </div>
+
+    <button id="dark-toggle" class="dark-toggle">🌙</button>
 
     <div class="hamburger" onclick="toggleMenu()">
       <div></div><div></div><div></div>
@@ -31,47 +349,48 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero fade-in">
-    <h1>Talent is equally distributed, but opportunity is not.</h1>
-    <p>A 501(c)(3) nonprofit based in South Bend, Indiana — expanding access to global PhD opportunities for exceptional graduates.</p>
-    <div class="hero-actions">
-      <a href="#scholars" class="btn">Meet Our Scholars</a>
-      <a href="#donate" class="btn btn-dark">Support Our Mission</a>
-    </div>
-  </section>
+  <!-- NEW HERO -->
+  <section class="hero hero-split fade-in slide-in-left">
+    <div class="hero-left">
+      <p class="hero-label">501(c)(3) Nonprofit • Since 2026</p>
 
-  <!-- STATS -->
-  <section class="stats fade-in">
-    <div><b id="count-scholars">0</b><br>Scholars</div>
-    <div><b id="count-phd">0</b><br>PhD Placements</div>
-    <div><b id="count-partners">0</b><br>Partners</div>
+      <h1>Talent is equally distributed, but opportunity is not.</h1>
+
+      <p class="hero-sub">
+        We identify and empower exceptional graduates with mentorship,
+        resources, and pathways to global PhD opportunities.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#programs" class="btn">Our Programs</a>
+        <a href="#donate" class="btn btn-dark">Support Our Mission</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>200+</strong><span>Scholars Supported</span></div>
+        <div><strong>30+</strong><span>PhD Placements</span></div>
+        <div><strong>15+</strong><span>Partner Institutions</span></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img src="hero-group.jpg" alt="Scholars collaborating on a university campus">
+    </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="sec about fade-in">
+  <section id="about" class="sec fade-in">
     <h2>Welcome to Ukwuata Global Initiatives 🎓</h2>
-    <p class="tagline">Talent is equally distributed, but opportunity is not.</p>
-
-    <div class="about-content">
-      <h3>Our Mission</h3>
-      <p>We are a <b>501(c)(3) nonprofit based in South Bend, Indiana</b>, dedicated to bridging the gap between exceptional graduates and global PhD opportunities.</p>
-
-      <h3>Where Our Name Comes From</h3>
-      <p>In Igbo, “Ukwuata” speaks to growth and abundance. One of our co‑founders’ native village in Nigeria was founded by a man named Ukwuata — a symbol of perseverance and legacy.</p>
-
-      <h3>Our Vision</h3>
-      <p>We believe that investing in one scholar means investing in a community. Our work is rooted in global collaboration and academic excellence.</p>
-    </div>
+    <p class="max-w-700">Talent is equally distributed, but opportunity is not.</p>
   </section>
 
   <!-- SCHOLARS -->
   <section id="scholars" class="sec fade-in">
     <h2>🌍 Meet Our Outstanding Scholars</h2>
-    <p class="section-intro">These scholars exemplify excellence, resilience, and global ambition.</p>
+    <p class="max-w-700">These scholars exemplify excellence, resilience, and global ambition.</p>
 
-    <div class="grid">
-      <article class="card">
+    <div class="grid-3">
+      <article class="card stagger-card">
         <img src="scholar1.jpg" alt="Chinoye">
         <div class="card-body">
           <h3>Chinoye</h3>
@@ -80,7 +399,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card stagger-card">
         <img src="scholar2.jpg" alt="Nneka">
         <div class="card-body">
           <h3>Nneka</h3>
@@ -89,12 +408,12 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card stagger-card">
         <img src="scholar3.jpg" alt="Daniel">
         <div class="card-body">
           <h3>Daniel</h3>
-          <p><b>B.Sc, Chemistry</b> — Michael Okpara University of Agriculture</p>
-          <p><b>MPhil, Advanced Materials for the Energy Transition</b> — University of Cambridge (UK)</p>
+          <p><b>B.Sc, Chemistry</b> — Michael Okpara University</p>
+          <p><b>MPhil, Advanced Materials</b> — University of Cambridge (UK)</p>
         </div>
       </article>
     </div>
@@ -103,118 +422,66 @@
   <!-- PROGRAMS -->
   <section id="programs" class="sec fade-in">
     <h2>📚 Our Programs</h2>
-    <p class="section-intro">UGI provides structured support to help exceptional graduates access global academic opportunities.</p>
+    <p class="max-w-700">UGI provides structured support to help exceptional graduates access global academic opportunities.</p>
 
-    <div class="grid">
-      <article class="prog">
-        <h3>Graduate School Mentorship</h3>
-        <p>One‑on‑one guidance for scholars preparing for competitive PhD and master’s programs worldwide.</p>
+    <div class="grid-3">
+      <article class="card stagger-card">
+        <div class="card-body">
+          <h3>Graduate School Mentorship</h3>
+          <p>One‑on‑one guidance for scholars preparing for competitive PhD programs worldwide.</p>
+        </div>
       </article>
 
-      <article class="prog">
-        <h3>Career Services</h3>
-        <p>Resume building, interview preparation, networking strategies, and professional coaching.</p>
+      <article class="card stagger-card">
+        <div class="card-body">
+          <h3>Career Services</h3>
+          <p>Resume building, interview preparation, networking strategies, and professional coaching.</p>
+        </div>
       </article>
 
-      <article class="prog">
-        <h3>Financial Assistance</h3>
-        <p>Support for exam fees, applications, credential evaluations, and essential academic expenses.</p>
+      <article class="card stagger-card">
+        <div class="card-body">
+          <h3>Financial Assistance</h3>
+          <p>Support for exam fees, applications, credential evaluations, and essential academic expenses.</p>
+        </div>
       </article>
     </div>
   </section>
 
-  <!-- VOLUNTEERS -->
-  <section id="team" class="sec team fade-in">
+  <!-- TEAM -->
+  <section id="team" class="sec fade-in">
     <h2>🤝 Meet Our Volunteer Team</h2>
-    <p class="section-intro">Our volunteers bring academic excellence, professional experience, and a deep commitment to mentorship.</p>
+    <p class="max-w-700">Our volunteers bring academic excellence and deep commitment to mentorship.</p>
 
-    <div class="grid">
-      <article class="card">
+    <div class="grid-3">
+      <article class="card stagger-card">
         <img src="volunteer1.jpg" alt="Zodo Agadi">
         <div class="card-body">
           <h3>Zodo Agadi</h3>
-          <p>BSc in Economics — University of Nigeria, Nsukka</p>
-          <p>MBA & MS in Computer Information Systems — Southern Illinois University Edwardsville</p>
-          <p>MS in Applied Computational Mathematics & Statistics — University of Notre Dame</p>
-          <p>Data Scientist (Industry)</p>
+          <p>Data Scientist</p>
         </div>
       </article>
 
-      <article class="card">
+      <article class="card stagger-card">
         <img src="volunteer2.jpg" alt="Philip Àlàbí">
         <div class="card-body">
           <h3>Philip Àlàbí</h3>
-          <p>BSc(ED), Industrial Chemistry — TAI Solarin University of Education</p>
-          <p>MS, Chemistry — Southern Illinois University Edwardsville</p>
-          <p>MA & PhD, Organic Chemistry — Brown University</p>
-          <p>Scientist (Industry)</p>
+          <p>Organic Chemist</p>
         </div>
       </article>
 
-      <article class="card">
+      <article class="card stagger-card">
         <img src="volunteer3.jpg" alt="Elizabeth Agadi">
         <div class="card-body">
           <h3>Elizabeth Agadi</h3>
-          <p>BS, Biochemistry — University of Notre Dame</p>
-          <p>PhD, Integrated Biomedical Sciences — University of Notre Dame</p>
-          <p>Former Graduate Career Consultant — University of Notre Dame</p>
-          <p>Volunteer & Parent</p>
+          <p>Graduate Career Consultant</p>
         </div>
       </article>
     </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section id="newsletter" class="sec fade-in" style="background:#F7F9FC;">
-    <h2>📬 Join Our Newsletter</h2>
-    <p class="section-intro">Stay updated on scholar achievements and new opportunities.</p>
-
-    <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit" class="btn">Subscribe</button>
-    </form>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="sec contact fade-in">
-    <h2>Contact Us</h2>
-    <p class="section-intro">
-      South Bend, IN • info@ukwuataglobal.org<br>
-      Facebook: <a href="https://www.facebook.com/profile.php?id=61593061477539" target="_blank">Visit Page</a><br>
-      LinkedIn: <a href="https://www.linkedin.com/company/143236925/admin/dashboard/" target="_blank">Visit Page</a><br>
-      Interest Form: <a href="https://docs.google.com/forms/d/15KfZbmksLdFtuMxmnSCggL28GSz-iez7ZYk6-_sutj8/edit?ts=6a66a549#question=791772419&field=719506980" target="_blank">Complete Form</a>
-    </p>
-
-    <div class="hero-actions">
-      <a class="btn btn-dark" href="mailto:info@ukwuataglobal.org">Send Message</a>
-    </div>
-  </section>
-
-  <!-- DONATE -->
-  <section id="donate" class="sec donate fade-in">
-    <h2>❤️ Support Our Mission</h2>
-    <p class="section-intro">Your generosity helps exceptional scholars access global opportunities.</p>
-    <div class="hero-actions">
-      <a class="btn" href="#">Donate Today</a>
-    </div>
-    <p class="donate-note">UGI is a registered 501(c)(3). All donations are tax‑deductible.</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#scholars">Scholars</a>
-      <a href="#team">Team</a>
-      <a href="#programs">Programs</a>
-      <a href="#donate">Donate</a>
-    </div>
-
-    <div class="social-icons">
-      <a href="https://www.facebook.com/profile.php?id=61593061477539" target="_blank">🔵</a>
-      <a href="https://www.linkedin.com/company/143236925/admin/dashboard/" target="_blank">💼</a>
-    </div>
-
     <p>© 2026 Ukwuata Global Initiatives • South Bend, IN • 501(c)(3)</p>
   </footer>
 
@@ -224,34 +491,32 @@
       document.querySelector('.nav-links').classList.toggle('show');
     }
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
+    /* DARK MODE */
+    const toggle = document.getElementById('dark-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('ugi-dark-mode', isDark ? '1' : '0');
     });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    function animateCounter(id, target) {
-      let count = 0;
-      const speed = target / 80;
-      const update = () => {
-        count += speed;
-        if (count < target) {
-          document.getElementById(id).innerText = Math.floor(count);
-          requestAnimationFrame(update);
-        } else {
-          document.getElementById(id).innerText = target;
-        }
-      };
-      update();
-    }
-
     window.addEventListener('load', () => {
-      animateCounter('count-scholars', 200);
-      animateCounter('count-phd', 30);
-      animateCounter('count-partners', 15);
+      if (localStorage.getItem('ugi-dark-mode') === '1') {
+        document.body.classList.add('dark-mode');
+      }
     });
+
+    /* ANIMATIONS */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = el.classList.contains('stagger-card') ? index * 80 : 0;
+          setTimeout(() => el.classList.add('visible'), delay);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in, .slide-in-left, .stagger-card')
+      .forEach(el => observer.observe(el));
   </script>
 
 </body>

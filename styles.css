@@ -45,16 +45,14 @@ nav { background:#0A1931; color:#fff; padding:16px 4%; display:flex; justify-con
   flex-direction:column;
 }
 
+/* === FIXED - ALL 3 ALIGNED, NO HEAD CUT === */
 .card img{
   width:100%;
-  height:auto !important;
-  max-height:none !important;
-  aspect-ratio:auto !important;
-  object-fit:contain !important;
-  object-position:center top;
+  height:380px !important;   /* same height for all */
+  object-fit:cover !important;
+  object-position:top center !important; /* keeps face visible */
   background:#F7F9FC;
   display:block;
-  border-bottom:1px solid #eee;
 }
 
 .card-body{ padding:20px; text-align:left; flex-grow:1; }

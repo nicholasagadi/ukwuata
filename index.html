@@ -370,11 +370,34 @@
   </div>
 </section>
 
-  <section id="newsletter" class="sec fade-in" style="background:#F7F9FC;">
-    <h2>📬 Join Our Newsletter</h2>
-    <p class="section-intro">Stay updated on scholar achievements and new opportunities.</p>
-    <form class="newsletter-form"><input type="email" placeholder="Enter your email" required><button type="submit" class="btn">Subscribe</button></form>
-  </section>
+<section id="newsletter" class="sec fade-in" style="background:#F8FAFF;padding:60px 20px;text-align:center;border-top:1px solid #E6EAF2">
+  <style>
+    #newsletter h3{color:#0A1931;font-size:24px;margin:0 0 8px}
+    #newsletter p.sub{color:#666;font-size:14.5px;margin:0 auto 22px;max-width:500px;line-height:1.5}
+    #newsletter .form-wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto}
+    #newsletter input{
+      flex:1;min-width:240px;padding:13px 16px;border-radius:30px;
+      border:1.5px solid #D6DCE8;font-size:15px;outline:none
+    }
+    #newsletter input:focus{border-color:#D4A94E;box-shadow:0 0 0 3px rgba(212,169,78,.2)}
+    #newsletter button{
+      background:#D4A94E;color:#0A1931;border:2px solid #D4A94E;
+      padding:13px 26px;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:.2s
+    }
+    #newsletter button:hover{background:#C19944;transform:translateY(-2px)}
+    #newsletter .trust{margin-top:12px;font-size:12px;color:#888}
+  </style>
+
+  <h3>📬 Join Our Newsletter</h3>
+  <p class="sub">Stay updated on scholar achievements, fully-funded PhD openings, and new opportunities.</p>
+
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdnocnoZmIgnt-KMzGFwjyCsa_lRss-3U6qQ98YHWGQpjpxwA/viewform" target="_blank" class="form-wrap">
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  
+  <div class="trust">No spam, unsubscribe anytime. 100% free updates.</div>
+</section>
 
 <section id="contact" class="sec fade-in" style="background:#0A1931;padding:70px 20px;text-align:center;color:#fff">
   <style>

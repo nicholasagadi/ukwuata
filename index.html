@@ -110,6 +110,7 @@
     <p class="section-intro">South Bend, IN • ukwuata@gmail.com<br>Facebook: <a href="https://www.facebook.com/profile.php?id=61593061477539" target="_blank">Visit Page</a><br>LinkedIn: <a href="https://www.linkedin.com/company/143236925/admin/dashboard/" target="_blank">Visit Page</a><br>Interest Form: <a href="https://docs.google.com/forms/d/15KfZbmksLdFtuMxmnSCggL28GSz-iez7ZYk6-_sutj8/edit" target="_blank">Complete Form</a></p>
     <div class="hero-actions"><a class="btn btn-dark" href="mailto:ukwuata@gmail.com">Send Message</a></div>
   </section>
+  
 <section id="donate" class="sec donate fade-in" style="text-align:center;background:#F0F6FF">
   <h2>❤️ Support Our Mission</h2>
   
@@ -121,28 +122,132 @@
     Your generosity helps exceptional scholars from less-privileged backgrounds cover application fees, relocation, visa, and rent to start their fully-funded PhDs. The critical gap that prevents many scholars from accepting their PhD offer.
   </p>
 
-  <!-- 4 BOX GRID -->
-  <div class="grid" style="margin-top:30px;text-align:left;max-width:900px;margin-left:auto;margin-right:auto;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-    
-    <article class="prog" style="border-left:4px solid #D4A94E">
-      <h3>$50 – Application Fee</h3>
-      <p>Covers one PhD application fee.</p>
+  <style>
+.donate-wrapper{max-width:980px;margin:30px auto}
+.donate-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:22px;
+  text-align:left
+}
+@media(max-width:700px){
+ .donate-grid{grid-template-columns:1fr}
+}
+.prog{
+  cursor:pointer;
+  background:#fff;
+  border-radius:14px;
+  padding:22px 20px;
+  box-shadow:0 3px 12px rgba(10,25,49,.07);
+  transition:all.25s ease;
+  border:1px solid #EAEAEA;
+  border-left:5px solid #D4A94E;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:160px
+}
+.prog:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 28px rgba(10,25,49,.15);
+  border-left-color:#0A1931
+}
+.prog h3{
+  margin:0 0 10px;
+  color:#0A1931;
+  font-size:17px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  line-height:1.3
+}
+.prog.icon{
+  background:#FFF7E6;
+  border:1px solid #D4A94E;
+  width:36px;height:36px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0
+}
+.prog p{margin:0;color:#555;font-size:14px;line-height:1.5}
+.prog span.read{
+  font-size:12px;
+  color:#0A1931;
+  background:#FFF2D2;
+  border:1px solid #D4A94E;
+  padding:5px 10px;
+  border-radius:20px;
+  font-weight:800;
+  margin-top:14px;
+  display:inline-block;
+  align-self:flex-start
+}
+/* Modal */
+.donate-modal{border:none;border-radius:16px;padding:0;max-width:650px;width:92%;margin:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.donate-modal::backdrop{background:rgba(10,25,49,.6)}
+.modal-head{padding:20px 24px;background:#0A1931;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.modal-body{padding:24px;text-align:left;line-height:1.6;font-size:15px;color:#222;max-height:70vh;overflow-y:auto}
+.modal-body ul{padding-left:18px}
+.close-btn{background:#fff;color:#0A1931;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-weight:800}
+</style>
+
+<div class="donate-wrapper">
+  <div class="donate-grid">
+    <article class="prog" onclick="openDonate(1)">
+      <div>
+        <h3><span class="icon">📄</span> $50 – Application Fee</h3>
+        <p>Covers one PhD application fee. Scholars apply to 6+ schools — it's a game of numbers.</p>
+      </div>
+      <span class="read">Click for details →</span>
     </article>
 
-    <article class="prog" style="border-left:4px solid #D4A94E">
-      <h3>$250 – Exams & Documents</h3>
-      <p>Covers GRE / TOEFL, transcripts, and shipping.</p>
+    <article class="prog" onclick="openDonate(2)">
+      <div>
+        <h3><span class="icon">📝</span> $250 – Exams & Documents</h3>
+        <p>Covers GRE / TOEFL, transcripts, verification & DHL shipping.</p>
+      </div>
+      <span class="read">Click for details →</span>
     </article>
 
-    <article class="prog" style="border-left:4px solid #D4A94E">
-      <h3>$500 – One-Month Rent Support</h3>
-      <p>Covers one-month rent to secure housing near campus before first stipend.</p>
+    <article class="prog" onclick="openDonate(3)">
+      <div>
+        <h3><span class="icon">🏠</span> $500 – One-Month Rent</h3>
+        <p>Covers first month rent to secure housing before stipend starts.</p>
+      </div>
+      <span class="read">Click for details →</span>
     </article>
 
-    <article class="prog" style="border-left:4px solid #D4A94E">
-      <h3>$1,000 – Relocation Package</h3>
-       <p>Visa Fee, Flight & Travel.</p>
+    <article class="prog" onclick="openDonate(4)">
+      <div>
+        <h3><span class="icon">✈️</span> $1,000 – Relocation Package</h3>
+        <p><b>Visa Fee + Flight & Travel</b><br>$500 Visa Fee + $500 Flight</p>
+      </div>
+      <span class="read">Click for details →</span>
     </article>
+  </div>
+</div>
+
+<dialog id="donateModal" class="donate-modal">
+  <div class="modal-head">
+    <h3 id="modalTitle" style="margin:0"></h3>
+    <button class="close-btn" onclick="document.getElementById('donateModal').close()">X</button>
+  </div>
+  <div id="modalBody" class="modal-body"></div>
+</dialog>
+
+<script>
+const donateData = {
+  1: {title: "$50 – Application Fee", html: `<p><b>Why it's needed:</b> A PhD application is a game of numbers. Top students from under-resourced backgrounds must apply to at least 6 schools to get 1-2 offers. Each US application costs $75-$150, and most schools offer no waivers for international applicants.</p><p><b>Breakdown:</b></p><ul><li><b>Application Fee:</b> $50-$130 (avg $90)</li><li><b>WES Evaluation:</b> $30-$50 per school</li><li><b>Our model:</b> $50 per app x 6 schools</li></ul><p><b>Example:</b> 6 schools = $300. For a scholar earning $80/month in Ghana, that's 4 months salary. Your $50 buys a lottery ticket for a fully-funded future.</p>`},
+  2: {title: "$250 – Exams & Documents", html: `<p><b>Why it's needed:</b> US schools require standardized tests and verified documents priced in dollars.</p><ul><li><b>GRE:</b> $220</li><li><b>TOEFL/IELTS:</b> $185-$250</li><li><b>Transcripts + DHL:</b> $70-$130</li></ul><p><b>Example:</b> Scholar in Kenya: GRE ($220) + TOEFL ($200) + transcripts ($45) + DHL ($60) = $525. Your $250 covers TOEFL + all docs for 2-3 schools.</p>`},
+  3: {title: "$500 – One-Month Rent Support", html: `<p><b>Why it's needed:</b> #1 reason scholars decline offers. Stipends start 30-45 days AFTER arrival. Landlords require rent BEFORE.</p><ul><li><b>Rent:</b> $450-$700</li><li><b>Deposit/Setup:</b> $50-$100</li></ul><p><b>Example:</b> Arrives Aug 15, stipend Sept 30, needs $550 for keys on Aug 15. Your $500 is just the bridge to first paycheck.</p>`},
+  4: {title: "$1,000 – Relocation / Visa Fee, Flight & Travel", html: `<p><b>Why Critical:</b> Many get fully-funded offers but can't afford final step. Universities don't cover visa/travel upfront.</p><p><b>Visa Fee - $500:</b> SEVIS $350 + MRV $185 + courier $30-$65. Without it visa can't be issued.</p><p><b>Flight & Travel - $500:</b> One-way flight $400-$700 (Lagos to Chicago), baggage $75-$100, local transit $50.</p><p><b>Example:</b> $480 flight + $70 baggage + $30 bus = $580. Your $1,000 doesn't pay tuition — it unlocks a $300k+ PhD.</p>`}
+};
+function openDonate(id){
+  document.getElementById('modalTitle').innerText = donateData[id].title;
+  document.getElementById('modalBody').innerHTML = donateData[id].html;
+  document.getElementById('donateModal').showModal();
+}
+</script>
 
   </div>
 

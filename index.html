@@ -574,27 +574,30 @@ function openDonate(id){
 
   </div>
 
-  <!-- BUTTONS -->
-  <div class="hero-actions" style="margin-top:32px;justify-content:center">
-    <a class="btn" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank">Donate via Card / Apple Pay</a>
+<!-- BUTTONS -->
+  <div class="hero-actions" style="margin-top:8px;justify-content:center">
+    <a class="btn" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank">💳 Donate via Card / Apple Pay</a>
   </div>
 
   <!-- ZELLE BOX -->
-  <div style="margin:35px auto;max-width:650px;background:#fff;border:2px solid #0A1931;border-radius:16px;padding:24px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center">
-    <div style="flex:1;min-width:200px;text-align:left">
-      <h3 style="margin:0 0 10px;color:#0A1931">Donate via Zelle® (0% Fee)</h3>
-      <p style="margin:6px 0"><b>Recipient:</b> UKWUATA GLOBAL INITIATIVES INC</p>
-      <p style="margin:6px 0"><b>Zelle ID:</b> ukwuata </p>
-      <p style="margin:6px 0;font-size:14px">Open bank app → Zelle → Send to <b>ukwuata </b></p>
-      <p style="font-size:13px;color:#666;margin-top:12px">Email ukwuata@gmail.com after for 501(c)(3) tax receipt.</p>
+  <div class="zelle-box">
+    <div class="zelle-info">
+      <h3>Donate via Zelle® — 0% Fee (Preferred)</h3>
+      <p class="z-line"><b>Recipient:</b> UKWUATA GLOBAL INITIATIVES INC <button class="copy-btn" onclick="navigator.clipboard.writeText('UKWUATA GLOBAL INITIATIVES INC')">Copy</button></p>
+      <p class="z-line"><b>Zelle ID:</b> ukwuata <button class="copy-btn" onclick="navigator.clipboard.writeText('ukwuata')">Copy</button></p>
+      <div class="z-instruct">Open bank app → Zelle → Send to <b>ukwuata</b></div>
+      <p style="font-size:13px;color:#6B7A90;margin-top:14px">Email <a href="mailto:ukwuata@gmail.com" style="color:#0A1931;font-weight:800;text-decoration:none;border-bottom:2px solid #D4A94E">ukwuata@gmail.com</a> after donating for your 501(c)(3) tax receipt.</p>
     </div>
-    <div style="flex:0 0 200px;text-align:center">
-      <img src="zelle-qr.png" alt="Zelle QR" style="width:200px;height:200px;object-fit:contain;border:1px solid #eee;border-radius:8px" onerror="this.style.display='none'">
+    <div class="qr-wrap">
+      <div style="font-size:10px;color:#888;margin-bottom:8px;line-height:1.3">Scan this code in your bank's app to pay<br><b>UKWUATA GLOBAL INITIATIVES INC</b></div>
+      <img src="zelle-qr.png" alt="Zelle QR" style="width:180px;height:180px;object-fit:contain;border-radius:8px" onerror="this.parentElement.innerHTML='<div style=color:#888;padding:40px 0>QR image: zelle-qr.png not found</div>'">
+      <div style="color:#7B2CBF;font-weight:900;margin-top:8px;font-size:13px;letter-spacing:.5px">Zelle®</div>
     </div>
   </div>
 
-  <p class="donate-note" style="margin-top:15px;line-height:1.6">
-    <b>UGI is a registered 501(c)(3) — South Bend, IN<br>All staff are volunteers. 100% goes directly to scholars. Tax-deductible.</b>
+  <p class="donate-note">
+    <b>UGI is a registered 501(c)(3) — South Bend, IN</b><br>
+    All staff are volunteers. 100% goes directly to scholars. Tax-deductible.
   </p>
 </section>
      <footer>

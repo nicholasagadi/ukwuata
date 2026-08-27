@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  /* === FIX STICKY HEADER CUT-OFF FOR ALL SECTIONS === */
-html {
-  scroll-behavior: smooth;
-}
-section[id], div[id] {
-  scroll-margin-top: 90px; /* must be header height + 15px */
-}
-
-@media(max-width: 768px){
-  section[id], div[id] {
-    scroll-margin-top: 75px; /* mobile header is shorter */
-  }
-}
   <link rel="icon" type="image/png" sizes="any" href="/favicon.png">
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Ukwuata Global Initiatives - We Don't Create Talent. We Unlock It.</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .stats{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;background:#0A1931;color:#fff;padding:28px 4%}
-    .stats b{font-size:28px;font-weight:800;color:#D4A94E;display:block}
-    .stats span{font-size:13px;opacity:.85}
-    .card img{object-fit:cover;object-position:top center !important;height:320px}
-    header img {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  mix-blend-mode: lighten;
-}
+  .stats{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;background:#0A1931;color:#fff;padding:30px 20px}
+  .stats b{font-size:28px;font-weight:800;color:#D4A94E;display:block}
+  .stats span{font-size:13px;opacity:.85}
+  .card img{object-fit:cover;object-position:top center!important;height:320px}
+
+    /* === HEADER LOGO - CORRECT - WORKS FOR NAV === */
+    nav.logo img,.logo img, nav img {
+      width:72px!important;
+      height:72px!important;
+      aspect-ratio:1/1!important;
+      object-fit:contain!important;
+      background:white!important;
+      border-radius:12px!important;
+      display:block!important;
+    }
+
+    /* === FIX CUT-OFF FOR ALL SECTIONS - INCREASED === */
+    html{scroll-behavior:smooth}
+    section[id]{
+      scroll-margin-top:110px!important; /* header is ~96px, give extra */
+    }
+    @media(max-width:768px){
+      section[id]{scroll-margin-top:85px!important}
+    }
   </style>
 </head>
 <body>
 
-  <nav>
-<!-- Add this in your <head> if you don't have it already -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-<div class="logo" style="display:flex; align-items:center; gap:16px;">
-  <img src="icon.png" style="height:72px; width:72px; border-radius:12px; display:block;">
-  
-  <div style="line-height:1.05; color:white; font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:1.6px; text-transform:uppercase;">
-    <div style="font-size:17.5px;">UKWUATA GLOBAL</div>
-    <div style="font-size:17.5px; margin-top:3px;">INITIATIVES</div>
-  </div>
-</div>
-    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#scholars">Scholars</a>
-      <a href="#programs">Programs</a>
-      <a href="#team">Team</a>
-      <a href="#newsletter">Newsletter</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="#donate">Donate</a>
-    </div>
-  </nav>
+<nav style="display:flex; align-items:center; justify-content:space-between; padding:12px 24px; background:#0A1931; position:sticky; top:0; z-index:999;">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
+  <!-- LOGO - FIXED RATIO -->
+  <div class="logo" style="display:flex; align-items:center; gap:16px;">
+    <img src="icon.png" style="height:72px; width:72px; aspect-ratio:1/1; object-fit:contain; background:white; border-radius:12px; display:block; flex-shrink:0;">
+
+    <div style="line-height:1.05; color:white; font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:1.6px; text-transform:uppercase;">
+      <div style="font-size:17.5px;">UKWUATA GLOBAL</div>
+      <div style="font-size:17.5px; margin-top:3px;">INITIATIVES</div>
+    </div>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#scholars">Scholars</a>
+    <a href="#programs">Programs</a>
+    <a href="#team">Team</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#contact">Contact</a>
+    <a class="btn" href="#donate">Donate</a>
+  </div>
+</nav>
+
+<!-- GLOBAL FIX FOR CUT-OFF - ADD THIS IN <head> <style> -->
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 96px; }
+  @media(max-width:768px){
+    section[id] { scroll-margin-top: 80px; }
+  }
+</style>
 <section class="hero fade-in" style="background:linear-gradient(180deg,#fff 0%,#F8FAFF 100%);padding:80px 20px 50px;text-align:center">
   <style>
     .hero h1{

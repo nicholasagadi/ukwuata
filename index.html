@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  /* === FIX STICKY HEADER CUT-OFF FOR ALL SECTIONS === */
+html {
+  scroll-behavior: smooth;
+}
+section[id], div[id] {
+  scroll-margin-top: 90px; /* must be header height + 15px */
+}
+
+@media(max-width: 768px){
+  section[id], div[id] {
+    scroll-margin-top: 75px; /* mobile header is shorter */
+  }
+}
   <link rel="icon" type="image/png" sizes="any" href="/favicon.png">
   
   <meta charset="UTF-8">

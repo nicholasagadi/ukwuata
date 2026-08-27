@@ -12,26 +12,34 @@
   .stats span{font-size:13px;opacity:.85}
   .card img{object-fit:cover;object-position:top center!important;height:320px}
 
-    /* === HEADER LOGO - CORRECT - WORKS FOR NAV === */
-    nav.logo img,.logo img, nav img {
+    /* === LOGO - NO SQUEEZE === */
+    nav.logo img,.logo img {
       width:72px!important;
       height:72px!important;
       aspect-ratio:1/1!important;
       object-fit:contain!important;
       background:white!important;
       border-radius:12px!important;
-      display:block!important;
     }
 
-    /* === FIX CUT-OFF FOR ALL SECTIONS - INCREASED === */
-    html{scroll-behavior:smooth}
-    section[id]{
-      scroll-margin-top:110px!important; /* header is ~96px, give extra */
+    /* === REDUCE GAP FOR ALL SECTIONS === */
+    section {
+      padding-top: 35px!important;
+      padding-bottom: 35px!important;
+      margin-top: 0!important;
     }
+    section h2:first-of-type {
+      margin-top: 0!important;
+    }
+
+    /* === FIX CUT-OFF WHEN CLICKING NAV === */
+    html{scroll-behavior:smooth}
+    section[id]{scroll-margin-top:110px!important}
     @media(max-width:768px){
       section[id]{scroll-margin-top:85px!important}
+      section{padding-top:25px!important; padding-bottom:25px!important}
     }
-  </style>
+</style>
 </head>
 <body>
 

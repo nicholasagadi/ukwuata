@@ -622,24 +622,25 @@ function openDonate(id){
   </div>
 
 <!-- BUTTONS -->
-  <div class="hero-actions" style="margin-top:8px;justify-content:center">
-    <a class="btn" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank">💳 Donate via Card / Apple Pay</a>
-  </div>
+<div class="hero-actions" style="margin-top:8px;justify-content:center; display:flex;">
+  <a class="btn" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank" style="background:#D4A94E; color:#0A1931; font-weight:800; padding:14px 26px; border-radius:50px; text-decoration:none;">💳 Donate via Card / Apple Pay</a>
+</div>
 
-    <div class="zelle-box">
-    <div class="zelle-info">
-      <h3>Donate via Zelle® — 0% Fee (Preferred)</h3>
-      <p class="z-line"><b>Recipient:</b> UKWUATA GLOBAL INITIATIVES INC <button class="copy-btn" onclick="copyText(this, 'UKWUATA GLOBAL INITIATIVES INC')">Copy</button></p>
-      <p class="z-line"><b>Zelle ID:</b> ukwuata <button class="copy-btn" onclick="copyText(this, 'ukwuata')">Copy</button></p>
-      <div class="z-instruct">Open bank app → Zelle → Send to <b>ukwuata</b></div>
-      <p style="font-size:13px;color:#6B7A90;margin-top:14px">Email <a href="mailto:receipt@ukwuata.org" style="color:#0A1931;font-weight:800;text-decoration:none;border-bottom:2px solid #D4A94E">receipt@ukwuata.org</a> after donating for your 501(c)(3) tax receipt.</p>
-    </div>
-    <div class="qr-wrap">
-      <div style="font-size:10px;color:#888;margin-bottom:8px;line-height:1.3">Scan this code in your bank's app to pay<br><b>UKWUATA GLOBAL INITIATIVES INC</b></div>
-      <img src="zelle-qr.jpg" alt="Zelle QR" style="width:180px;height:180px;object-fit:contain;border-radius:8px">
-      <div style="color:#7B2CBF;font-weight:900;margin-top:8px;font-size:13px;letter-spacing:.5px">Zelle®</div>
-    </div>
+<div class="zelle-box" style="max-width:720px; margin:22px auto 0 auto; background:#fff; border:1px solid #e9eef5; border-radius:16px; padding:22px; display:flex; gap:20px; justify-content:space-between; align-items:flex-start; box-shadow:0 4px 18px rgba(10,25,49,.05);">
+  <div class="zelle-info" style="flex:1; text-align:left;">
+    <h3 style="margin:0 0 14px 0; font-size:16px; color:#0A1931;">Donate via Zelle® — 0% Fee (Preferred)</h3>
+    <p style="background:#F7F9FC; padding:8px 12px; border-radius:8px; font-size:13px; margin:8px 0; display:flex; justify-content:space-between; align-items:center;"><b>Recipient:</b> UKWUATA GLOBAL INITIATIVES INC <button onclick="copyText(this, 'UKWUATA GLOBAL INITIATIVES INC')" style="font-size:11px; padding:4px 10px; border-radius:6px; border:1px solid #ccc; background:white; cursor:pointer;">Copy</button></p>
+    <p style="background:#F7F9FC; padding:8px 12px; border-radius:8px; font-size:13px; margin:8px 0; display:flex; justify-content:space-between; align-items:center;"><b>Zelle ID:</b> ukwuata <button onclick="copyText(this, 'ukwuata')" style="font-size:11px; padding:4px 10px; border-radius:6px; border:1px solid #ccc; background:white; cursor:pointer;">Copy</button></p>
+    <div style="font-size:13px; font-weight:600; color:#0A1931; margin-top:12px;">Open bank app → Zelle → Send to <b>ukwuata</b></div>
+    <p style="font-size:13px;color:#6B7A90;margin-top:14px">Email <a href="mailto:receipt@ukwuata.org" style="color:#0A1931;font-weight:800;text-decoration:none;border-bottom:2px solid #D4A94E">receipt@ukwuata.org</a> for 501(c)(3) receipt.</p>
   </div>
+  <div style="text-align:center; background:#F7F9FC; padding:12px; border-radius:12px; border:1px dashed #d0d7e3;">
+    <div style="font-size:10px;color:#888;margin-bottom:8px;">Scan in bank app<br><b>UKWUATA GLOBAL INITIATIVES INC</b></div>
+    <img src="zelle-qr.jpg" alt="Zelle QR" style="width:180px;height:180px;object-fit:contain;border-radius:8px">
+    <div style="color:#7B2CBF;font-weight:900;margin-top:8px;font-size:13px;">Zelle®</div>
+  </div>
+</div>
+
 
 <script>
 function copyText(btn, text) {

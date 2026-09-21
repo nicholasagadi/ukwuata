@@ -621,48 +621,71 @@ function openDonate(id){
 
   </div>
 
-<!-- BUTTONS -->
-<div style="max-width:720px; margin:40px auto; font-family:Inter, sans-serif;">
+<div style="max-width:640px; margin:0 auto; padding:20px; background:#eef6ff; font-family:Inter, -apple-system, BlinkMacSystemFont, sans-serif;">
+  
+  <h2 style="text-align:center; color:#0A1931; font-size:28px; font-weight:800; margin:0 0 8px 0;">Support Our Scholars</h2>
+  <p style="text-align:center; color:#5a6d8a; font-size:14px; margin:0 0 20px 0;">Your donation provides PhD application support.<br><b>0% goes to fees - 100% to scholars.</b></p>
 
-  <!-- Title like Our Programs -->
-  <h2 style="text-align:center; color:#0A1931; font-size:32px; font-weight:800; margin:0 0 8px 0;">Support Our Scholars</h2>
-  <p style="text-align:center; color:#5a6d8a; font-size:14px; margin:0 0 24px 0;">Your donation provides PhD application support. <b>0% goes to fees - 100% to scholars.</b></p>
+  <div style="background:#fff; border-radius:20px; padding:24px; box-shadow:0 10px 40px rgba(10,25,49,.08); border:1px solid #e8eef6;">
 
-  <div style="background:#fff; border-radius:16px; box-shadow:0 8px 30px rgba(10,25,49,.08); border:1px solid #eef2f7; overflow:hidden;">
+    <div style="text-align:center; margin-bottom:16px;">
+      <span style="background:#D9A441; color:#fff; font-size:12px; font-weight:800; padding:6px 14px; border-radius:999px;">0% FEE</span>
+    </div>
 
-    <!-- Card / Apple Pay - 0% Fee -->
-    <div style="padding:22px 22px 18px 22px;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-        <span style="font-size:11px; font-weight:800; background:#fdf2d5; color:#9c7a2f; padding:4px 10px; border-radius:999px; letter-spacing:.5px;">— 0% FEE —</span>
+    <!-- Card Row -->
+    <div style="border:1px solid #eef2f7; border-radius:12px; padding:12px 16px; display:flex; gap:12px; align-items:center; margin-bottom:16px;">
+      <span style="font-size:22px;">💳</span>
+      <div>
+        <div style="font-weight:800; color:#0A1931; font-size:15px;">Donate via Card / Apple Pay</div>
+        <div style="font-size:12px; color:#6b7f9e;">Secure via Zeffy • Instant • 0% processing fee</div>
       </div>
+    </div>
+
+    <!-- Gold Button -->
+    <a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank"
+       style="display:block; background:#D9A441; color:#0A1931; text-align:center; padding:14px; border-radius:12px; font-weight:800; font-size:16px; text-decoration:none; margin-bottom:18px;">
+      Donate via Card / Apple Pay
+    </a>
+
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <div style="flex:1; height:1px; background:#eef2f7;"></div>
+      <span style="color:#9aadc8; font-size:13px;">or</span>
+      <div style="flex:1; height:1px; background:#eef2f7;"></div>
+    </div>
+
+    <!-- Zelle -->
+    <div style="margin-bottom:12px;">
+      <div style="font-weight:900; color:#0A1931; font-size:20px; margin-bottom:10px;">Zelle®</div>
       
-      <div style="border:1px solid #eef2f7; border-radius:12px; padding:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="border:1px solid #e5e7eb; border-radius:6px; padding:6px 8px; font-size:12px; font-weight:800;">Pay</div>
-          <div>
-            <div style="font-weight:800; color:#0A1931; font-size:15px;">Donate via Card / Apple Pay</div>
-            <div style="font-size:12px; color:#6b7f9e;">Secure via Zeffy • Instant • 0% processing fee</div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <span style="font-size:13px; color:#6b7f9e; min-width:65px;">Recipient</span>
+          <div style="flex:1; display:flex; gap:8px;">
+            <div style="flex:1; background:#f7f9fc; border:1px solid #e8eef6; border-radius:8px; padding:8px 12px; font-size:13px; font-weight:600; color:#0A1931;">UKWUATA GLOBAL INITIATIVES INC</div>
+            <button onclick="navigator.clipboard.writeText('UKWUATA GLOBAL INITIATIVES INC'); this.textContent='Copied!'" style="border:1px solid #D9A441; background:#fff; color:#9c7a2f; border-radius:8px; padding:6px 14px; font-size:12px; font-weight:600; cursor:pointer;">Copy</button>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <span style="font-size:13px; color:#6b7f9e; min-width:65px;">Zelle ID</span>
+          <div style="flex:1; display:flex; gap:8px;">
+            <div style="flex:1; background:#f7f9fc; border:1px solid #e8eef6; border-radius:8px; padding:8px 12px; font-size:13px; font-weight:600; color:#0A1931;">ukwuata</div>
+            <button onclick="navigator.clipboard.writeText('ukwuata'); this.textContent='Copied!'" style="border:1px solid #D9A441; background:#fff; color:#9c7a2f; border-radius:8px; padding:6px 14px; font-size:12px; font-weight:600; cursor:pointer;">Copy</button>
           </div>
         </div>
       </div>
 
-      <a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank" 
-         style="display:block; margin-top:14px; background:#D9A441; color:#0A1931; text-align:center; padding:13px; border-radius:10px; font-weight:800; font-size:15px; text-decoration:none;">
-        Pay Donate via Card / Apple Pay
-      </a>
-
-      <div style="display:flex; align-items:center; gap:12px; margin:18px 0; color:#9aadc8; font-size:13px;">
-        <div style="flex:1; height:1px; background:#eef2f7;"></div> or <div style="flex:1; height:1px; background:#eef2f7;"></div>
+      <div style="background:#fdf2d5; border-radius:10px; padding:10px 12px; margin-top:12px; font-size:13px; font-weight:600; color:#0A1931; text-align:center;">
+        ⓘ &nbsp; Open bank app → Zelle → Send to ukwuata
       </div>
+    </div>
 
-      <!-- Zelle - 0% Fee -->
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-        <span style="color:#6d28d9; font-weight:900; font-size:20px;">Zelle®</span>
-        <div>
-          <div style="font-weight:800; color:#0A1931; font-size:15px;">Donate via Zelle</div>
-          <div style="font-size:12px; color:#6b7f9e;">Direct to our organization • 0% processing fee</div>
-        </div>
-      </div>
+    <div style="text-align:center; margin-top:16px; font-size:11px; color:#8a9ab3;">
+      501(c)(3) • EIN 42-3531226
+    </div>
+
+  </div>
+</div>
 
       <div style="display:flex; flex-direction:column; gap:8px;">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">

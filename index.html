@@ -7,13 +7,32 @@
   <title>Ukwuata Global Initiatives - We Don't Create Talent. We Unlock It.</title>
   <link rel="stylesheet" href="styles.css">
   <style>
- .stats{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;background:#0A1931;color:#fff;padding:30px 20px}
- .stats b{font-size:28px;font-weight:800;color:#D4A94E;display:block}
- .stats span{font-size:13px;opacity:.85}
- .card img{object-fit:cover;object-position:top center!important;height:320px}
-    nav.logo img,.logo img { width:72px!important; height:72px!important; aspect-ratio:1/1!important; object-fit:contain!important; background:white!important; border-radius:12px!important; }
-    section { padding-top: 35px!important; padding-bottom: 35px!important; margin-top: 0!important; }
-    section h2:first-of-type { margin-top: 0!important; }
+  .stats{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;background:#0A1931;color:#fff;padding:30px 20px}
+  .stats b{font-size:28px;font-weight:800;color:#D4A94E;display:block}
+  .stats span{font-size:13px;opacity:.85}
+  .card img{object-fit:cover;object-position:top center!important;height:320px}
+
+    /* === LOGO - NO SQUEEZE === */
+    nav.logo img,.logo img {
+      width:72px!important;
+      height:72px!important;
+      aspect-ratio:1/1!important;
+      object-fit:contain!important;
+      background:white!important;
+      border-radius:12px!important;
+    }
+
+    /* === REDUCE GAP FOR ALL SECTIONS === */
+    section {
+      padding-top: 35px!important;
+      padding-bottom: 35px!important;
+      margin-top: 0!important;
+    }
+    section h2:first-of-type {
+      margin-top: 0!important;
+    }
+
+    /* === FIX CUT-OFF WHEN CLICKING NAV === */
     html{scroll-behavior:smooth}
     section[id]{scroll-margin-top:110px!important}
     @media(max-width:768px){
@@ -25,15 +44,21 @@
 <body>
 
 <nav style="display:flex; align-items:center; justify-content:space-between; padding:12px 24px; background:#0A1931; position:sticky; top:0; z-index:999;">
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <!-- LOGO - FIXED RATIO -->
   <div class="logo" style="display:flex; align-items:center; gap:16px;">
     <img src="icon.png" style="height:72px; width:72px; aspect-ratio:1/1; object-fit:contain; background:white; border-radius:12px; display:block; flex-shrink:0;">
+
     <div style="line-height:1.05; color:white; font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:1.6px; text-transform:uppercase;">
       <div style="font-size:17.5px;">UKWUATA GLOBAL</div>
       <div style="font-size:17.5px; margin-top:3px;">INITIATIVES</div>
     </div>
   </div>
+
   <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#scholars">Scholars</a>
@@ -45,25 +70,64 @@
   </div>
 </nav>
 
+<!-- GLOBAL FIX FOR CUT-OFF - ADD THIS IN <head> <style> -->
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 96px; }
+  @media(max-width:768px){
+    section[id] { scroll-margin-top: 80px; }
+  }
+</style>
 <section class="hero fade-in" style="background:linear-gradient(180deg,#fff 0%,#F8FAFF 100%);padding:80px 20px 50px;text-align:center">
   <style>
-   .hero h1{font-size:42px;line-height:1.15;max-width:750px;margin:0 auto 18px;color:#0A1931;font-weight:900;letter-spacing:-.5px}
-   .hero h1 span{color:#D4A94E}
-   .hero p{max-width:680px;margin:0 auto 28px;font-size:16.5px;line-height:1.7;color:#555}
-   .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-   .hero-actions.btn{padding:13px 24px;border-radius:30px;font-weight:800;font-size:15px;text-decoration:none;transition:.2s;display:inline-block}
-   .btn-gold{background:#D4A94E;color:#0A1931;border:2px solid #D4A94E}
-   .btn-gold:hover{background:#C19944;transform:translateY(-2px)}
-   .btn-dark{background:#0A1931;color:#fff;border:2px solid #0A1931}
-   .btn-dark:hover{background:#000;transform:translateY(-2px)}
-   .stats{background:#0A1931;color:#fff;display:grid;grid-template-columns:repeat(3,1fr);padding:28px 20px;text-align:center;gap:20px}
+    .hero h1{
+      font-size:42px;
+      line-height:1.15;
+      max-width:750px;
+      margin:0 auto 18px;
+      color:#0A1931;
+      font-weight:900;
+      letter-spacing:-.5px
+    }
+    .hero h1 span{color:#D4A94E}
+    .hero p{
+      max-width:680px;
+      margin:0 auto 28px;
+      font-size:16.5px;
+      line-height:1.7;
+      color:#555
+    }
+    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .hero-actions .btn{
+      padding:13px 24px;
+      border-radius:30px;
+      font-weight:800;
+      font-size:15px;
+      text-decoration:none;
+      transition:.2s;
+      display:inline-block
+    }
+    .btn-gold{background:#D4A94E;color:#0A1931;border:2px solid #D4A94E}
+    .btn-gold:hover{background:#C19944;transform:translateY(-2px)}
+    .btn-dark{background:#0A1931;color:#fff;border:2px solid #0A1931}
+    .btn-dark:hover{background:#000;transform:translateY(-2px)}
+    .stats{
+      background:#0A1931;
+      color:#fff;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      padding:28px 20px;
+      text-align:center;
+      gap:20px
+    }
     @media(max-width:700px){.stats{grid-template-columns:1fr;gap:24px}.hero h1{font-size:32px}}
-   .stats b{display:block;font-size:28px;color:#D4A94E;line-height:1}
-   .stats div{font-size:16px;font-weight:700;line-height:1.3}
-   .stats span{display:block;font-size:12.5px;font-weight:400;color:#A8B2C0;margin-top:5px}
+    .stats b{display:block;font-size:28px;color:#D4A94E;line-height:1}
+    .stats div{font-size:16px;font-weight:700;line-height:1.3}
+    .stats span{display:block;font-size:12.5px;font-weight:400;color:#A8B2C0;margin-top:5px}
   </style>
+
   <h1>Talent is equally distributed, but <span>opportunity is not.</span></h1>
-  <p>Ukwuata Global Initiatives Inc. (UGI) is a 501(c)(3) nonprofit, EIN: 42-3531226, based at 128 S Ellsworth Place, South Bend, IN 46617, USA, which serves <strong>exceptional graduates from less-privileged backgrounds worldwide</strong> who are seeking fully-funded PhDs and high-skill global opportunities.</p>
+ <p>Ukwuata Global Initiatives (UGI) is a 501(c)(3) nonprofit based in South Bend, Indiana, which serves <strong>exceptional graduates from less-privileged backgrounds worldwide</strong> who are seeking fully-funded PhDs and high-skill global opportunities. UGI does this by providing <strong>100% free mentorship & career services</strong>, as well as <strong>key financial assistance</strong> required to overcome barriers to accessing fully funded programs.</p>
   <div class="hero-actions">
     <a href="#scholars" class="btn btn-gold">Meet Our Scholars</a>
     <a href="#donate" class="btn btn-dark">Support Our Mission</a>
@@ -79,27 +143,29 @@
 <section id="about" class="sec fade-in" style="background:#fff;padding:70px 20px">
   <style>
     #about{max-width:900px;margin:0 auto}
-    #about.eyebrow{text-align:center;color:#D4A94E;font-weight:800;letter-spacing:1px;font-size:13px;text-transform:uppercase;margin-bottom:10px}
+    #about .eyebrow{text-align:center;color:#D4A94E;font-weight:800;letter-spacing:1px;font-size:13px;text-transform:uppercase;margin-bottom:10px}
     #about h2{text-align:center;color:#0A1931;font-size:32px;margin:0 0 8px}
-    #about.tagline{text-align:center;font-style:italic;font-weight:700;color:#0A1931;margin-bottom:40px;font-size:18px}
-    #about.block{margin-bottom:36px}
-    #about.block h3{color:#0A1931;font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
-    #about.block h3:before{content:'';display:inline-block;width:4px;height:22px;background:#D4A94E;border-radius:2px}
-    #about.block p{color:#444;line-height:1.7;font-size:15.5px;margin:0 0 12px}
-    #about.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0 0}
-    @media(max-width:700px){#about.pillars{grid-template-columns:1fr}}
-    #about.pill{background:#F8FAFF;border:1px solid #E6EAF2;border-radius:12px;padding:16px;text-align:center}
-    #about.pill b{display:block;color:#0A1931;margin-bottom:4px}
-    #about.pill span{font-size:13px;color:#666}
-    #about.name-box{background:#0A1931;color:#fff;border-radius:12px;padding:20px 22px;margin-top:12px}
-    #about.name-box p{color:#C9D1DE;margin:0;line-height:1.6}
+    #about .tagline{text-align:center;font-style:italic;font-weight:700;color:#0A1931;margin-bottom:40px;font-size:18px}
+    #about .block{margin-bottom:36px}
+    #about .block h3{color:#0A1931;font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+    #about .block h3:before{content:'';display:inline-block;width:4px;height:22px;background:#D4A94E;border-radius:2px}
+    #about .block p{color:#444;line-height:1.7;font-size:15.5px;margin:0 0 12px}
+    #about .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0 0}
+    @media(max-width:700px){#about .pillars{grid-template-columns:1fr}}
+    #about .pill{background:#F8FAFF;border:1px solid #E6EAF2;border-radius:12px;padding:16px;text-align:center}
+    #about .pill b{display:block;color:#0A1931;margin-bottom:4px}
+    #about .pill span{font-size:13px;color:#666}
+    #about .name-box{background:#0A1931;color:#fff;border-radius:12px;padding:20px 22px;margin-top:12px}
+    #about .name-box p{color:#C9D1DE;margin:0;line-height:1.6}
   </style>
+
   <div class="eyebrow">Who We Are</div>
   <h2>Welcome to Ukwuata Global Initiatives 🎓</h2>
   <div class="tagline">We don't create talent. We unlock it.</div>
+
   <div class="block">
     <h3>Our Mission</h3>
-    <p><b>Ukwuata Global Initiatives Inc., EIN 42-3531226, removes financial and informational barriers preventing competitive, under-resourced graduates worldwide from accessing fully-funded PhDs and high-skill global opportunities.</b></p>
+    <p><b>Ukwuata Global Initiatives Inc. removes financial and informational barriers preventing competitive, under-resourced graduates worldwide from accessing fully-funded PhDs and high-skill global opportunities.</b></p>
     <p>Thousands earn top honors in STEM and health sciences yearly but never apply to doctoral programs in the US, Canada, and Europe due to application fees and lack of mentorship. We bridge that gap through:</p>
     <div class="pillars">
       <div class="pill"><b>1) Knowledge Transfer</b><span>Mentorship & Application Strategy</span></div>
@@ -107,10 +173,12 @@
       <div class="pill"><b>3) Financial Access</b><span>Application & Visa Fees, Relocation Expenses</span></div>
     </div>
   </div>
+
   <div class="block">
     <h3>Our Vision</h3>
     <p>Birthplace and income do not determine access to global research training. We believe investing in one scholar from a less-privileged background means investing in an entire community.</p>
   </div>
+
   <div class="block">
     <h3>Where Our Name Comes From</h3>
     <div class="name-box">
@@ -121,27 +189,85 @@
 
 <section id="scholars" class="sec fade-in" style="background:#FAFBFD;padding:80px 20px 60px;scroll-margin-top:85px;">
   <h2 style="text-align:center;color:#0A1931;margin-top:0;padding-top:10px;">🌍 Meet Our Outstanding Scholars</h2>
-  <p class="section-intro" style="text-align:center;max-width:700px;margin:12px auto 36px;color:#444;line-height:1.6">We have supported <b>40+ exceptional graduates</b> from less-privileged backgrounds. Below are 3 featured scholars exemplifying excellence, resilience, and global ambition.</p>
+  <p class="section-intro" style="text-align:center;max-width:700px;margin:12px auto 36px;color:#444;line-height:1.6">
+    We have supported <b>40+ exceptional graduates</b> from less-privileged backgrounds. 
+    Below are 3 featured scholars exemplifying excellence, resilience, and global ambition.
+  </p>
+
   <style>
-    #scholars.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1050px;margin:0 auto;}
-    @media(max-width:900px){#scholars.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){#scholars.grid{grid-template-columns:1fr}}
-    #scholars.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(10,25,49,.08);border:1px solid #EAEAEA;transition:all.25s ease;display:flex;flex-direction:column;}
-    #scholars.card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(10,25,49,.15)}
-    #scholars.card-img-wrap{position:relative;height:360px;overflow:hidden;background:#eee}
-    #scholars.card-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-    #scholars.badge{position:absolute;top:14px;left:14px;background:#0A1931;color:#fff;font-size:11px;font-weight:800;padding:6px 12px;border-radius:20px;letter-spacing:.4px}
-    #scholars.badge.gold{background:#D4A94E;color:#0A1931}
-    #scholars.card-body{padding:20px;display:flex;flex-direction:column;flex:1}
-    #scholars.card-body h3{margin:0 0 12px;color:#0A1931;font-size:19px}
-    #scholars.card-body p{font-size:13.8px;line-height:1.5;margin:0 0 6px;color:#555}
-    #scholars.card-body p b{color:#222}
-    #scholars.to{margin-top:10px;padding-top:10px;border-top:1px dashed #E0E0E0}
+    #scholars .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      max-width:1050px;
+      margin:0 auto;
+    }
+    @media(max-width:900px){#scholars .grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){#scholars .grid{grid-template-columns:1fr}}
+    #scholars .card{
+      background:#fff;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 4px 18px rgba(10,25,49,.08);
+      border:1px solid #EAEAEA;
+      transition:all .25s ease;
+      display:flex;
+      flex-direction:column;
+    }
+    #scholars .card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(10,25,49,.15)}
+    #scholars .card-img-wrap{position:relative;height:360px;overflow:hidden;background:#eee}
+    #scholars .card-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+    #scholars .badge{
+      position:absolute;top:14px;left:14px;
+      background:#0A1931;color:#fff;
+      font-size:11px;font-weight:800;
+      padding:6px 12px;border-radius:20px;
+      letter-spacing:.4px
+    }
+    #scholars .badge.gold{background:#D4A94E;color:#0A1931}
+    #scholars .card-body{padding:20px;display:flex;flex-direction:column;flex:1}
+    #scholars .card-body h3{margin:0 0 12px;color:#0A1931;font-size:19px}
+    #scholars .card-body p{font-size:13.8px;line-height:1.5;margin:0 0 6px;color:#555}
+    #scholars .card-body p b{color:#222}
+    #scholars .to{margin-top:10px;padding-top:10px;border-top:1px dashed #E0E0E0}
   </style>
+
   <div class="grid">
-    <article class="card"><div class="card-img-wrap"><img src="scholar1.jpg" alt="Chinoye"><span class="badge gold">✓ Fully-Funded PhD</span></div><div class="card-body"><h3>Chinoye</h3><p><b>B.Eng, Marine Engineering</b> — Nigeria Maritime University</p><p class="to"><b>PhD Candidate, Mechanical Engineering</b> — University of Delaware (USA)</p></div></article>
-    <article class="card"><div class="card-img-wrap"><img src="scholar2.jpg" alt="Nneka"><span class="badge">✓ Fully-Funded M.Sc</span></div><div class="card-body"><h3>Nneka</h3><p><b>B.Sc, Marine Geology</b> — Nigeria Maritime University</p><p class="to"><b>M.Sc Student, Geology</b> — University of Kansas (USA)</p></div></article>
-    <article class="card"><div class="card-img-wrap"><img src="scholar3.jpg" alt="Daniel"><span class="badge gold">✓ University of Cambridge</span></div><div class="card-body"><h3>Daniel</h3><p><b>B.Sc, Chemistry</b> — Michael Okpara University of Agriculture</p><p class="to"><b>MPhil, Advanced Materials for the Energy Transition</b> — University of Cambridge (UK)</p></div></article>
+    <article class="card">
+      <div class="card-img-wrap">
+        <img src="scholar1.jpg" alt="Chinoye">
+        <span class="badge gold">✓ Fully-Funded PhD</span>
+      </div>
+      <div class="card-body">
+        <h3>Chinoye</h3>
+        <p><b>B.Eng, Marine Engineering</b> — Nigeria Maritime University</p>
+        <p class="to"><b>PhD Candidate, Mechanical Engineering</b> — University of Delaware (USA)</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img-wrap">
+        <img src="scholar2.jpg" alt="Nneka">
+        <span class="badge">✓ Fully-Funded M.Sc</span>
+      </div>
+      <div class="card-body">
+        <h3>Nneka</h3>
+        <p><b>B.Sc, Marine Geology</b> — Nigeria Maritime University</p>
+        <p class="to"><b>M.Sc Student, Geology</b> — University of Kansas (USA)</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img-wrap">
+        <img src="scholar3.jpg" alt="Daniel">
+        <span class="badge gold">✓ University of Cambridge</span>
+      </div>
+      <div class="card-body">
+        <h3>Daniel</h3>
+        <p><b>B.Sc, Chemistry</b> — Michael Okpara University of Agriculture</p>
+        <p class="to"><b>MPhil, Advanced Materials for the Energy Transition</b> — University of Cambridge (UK)</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -149,96 +275,401 @@
   <style>
     #programs{max-width:1100px;margin:0 auto;text-align:center}
     #programs h2{color:#0A1931;font-size:30px;margin:0 0 8px}
-    #programs.sub{color:#666;font-size:15.5px;margin:0 auto 36px;max-width:600px}
-    #programs.p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left}
-    @media(max-width:900px){#programs.p-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){#programs.p-grid{grid-template-columns:1fr}}
-    #programs.p-card{background:#fff;border-radius:16px;padding:24px 22px;border:1px solid #EAEAEA;border-left:5px solid #D4A94E;box-shadow:0 4px 18px rgba(10,25,49,.07);transition:.25s;display:flex;flex-direction:column;}
-    #programs.p-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(10,25,49,.13)}
-    #programs.p-card.icon{font-size:26px;margin-bottom:10px}
-    #programs.p-card h3{margin:0 0 10px;color:#0A1931;font-size:18px}
-    #programs.p-card p{margin:0;color:#555;line-height:1.6;font-size:14px;flex:1}
+    #programs .sub{color:#666;font-size:15.5px;margin:0 auto 36px;max-width:600px}
+    #programs .p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left}
+    @media(max-width:900px){#programs .p-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){#programs .p-grid{grid-template-columns:1fr}}
+    #programs .p-card{
+      background:#fff;
+      border-radius:16px;
+      padding:24px 22px;
+      border:1px solid #EAEAEA;
+      border-left:5px solid #D4A94E;
+      box-shadow:0 4px 18px rgba(10,25,49,.07);
+      transition:.25s;
+      display:flex;
+      flex-direction:column;
+    }
+    #programs .p-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(10,25,49,.13)}
+    #programs .p-card .icon{font-size:26px;margin-bottom:10px}
+    #programs .p-card h3{margin:0 0 10px;color:#0A1931;font-size:18px}
+    #programs .p-card p{margin:0;color:#555;line-height:1.6;font-size:14px;flex:1}
   </style>
+
   <h2>📚 Our Programs</h2>
   <p class="sub">How we bridge the gap for under-resourced graduates worldwide.</p>
+
   <div class="p-grid">
-    <div class="p-card"><div class="icon">🧠</div><h3>1. Knowledge Transfer</h3><p>Mentorship and guidance on navigating the competitive PhD application process.</p></div>
-    <div class="p-card"><div class="icon">💼</div><h3>2. Career Services</h3><p>CV and statment reviews, interview preparation, and professional coaching.</p></div>
-    <div class="p-card"><div class="icon">💰</div><h3>3. Financial Access</h3><p>Application fees, visa fees, relocation expenses and one month rent support.</p></div>
+    <div class="p-card">
+      <div class="icon">🧠</div>
+      <h3>1. Knowledge Transfer</h3>
+      <p>Mentorship and guidance on navigating the competitive PhD application process, including finding advisors in US, Canada & Europe, and information on crafting effective statements.</p>
+    </div>
+    <div class="p-card">
+      <div class="icon">💼</div>
+      <h3>2. Career Services</h3>
+      <p>CV and statment reviews, interview preparation, and professional coaching for high-skill global opportunities.</p>
+    </div>
+    <div class="p-card">
+      <div class="icon">💰</div>
+      <h3>3. Financial Access</h3>
+      <p>Application fees, essential academic expenses, and for successful applicants admitted to fully funded programs, visa fees, relocations expenses and one month rent support.</p>
+    </div>
   </div>
 </section>
 
-<section id="team" class="sec team fade-in" style="background:#FAFBFD;padding:60px 20px">
+  <section id="team" class="sec team fade-in" style="background:#FAFBFD;padding:60px 20px">
   <h2 style="text-align:center;color:#0A1931">🤝 Meet Our Volunteer Team</h2>
-  <p class="section-intro" style="text-align:center;max-width:720px;margin:12px auto 40px;color:#555;line-height:1.6">Our volunteers bring academic excellence, professional experience, and a deep commitment to mentorship — <b>100% volunteer-led.</b></p>
+  <p class="section-intro" style="text-align:center;max-width:720px;margin:12px auto 40px;color:#555;line-height:1.6">
+    Our volunteers bring academic excellence, professional experience, and a deep commitment to mentorship — <b>100% volunteer-led.</b>
+  </p>
+
   <style>
-    #team.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;align-items:stretch;}
-    @media(max-width:900px){#team.grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){#team.grid{grid-template-columns:1fr}}
-    #team.card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #EAEAEA;border-left:5px solid #D4A94E;box-shadow:0 4px 18px rgba(10,25,49,.08);transition:.25s ease;display:flex;flex-direction:column;}
-    #team.card:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(10,25,49,.14);}
-    #team.card img{width:100%;height:340px;object-fit:cover;object-position:top center;display:block;background:#f0f0f0;}
-    #team.card-body{padding:20px;display:flex;flex-direction:column;flex:1}
-    #team.card-body h3{margin:0 0 12px;color:#0A1931;font-size:19px}
-    #team.card-body p{font-size:13.8px;line-height:1.5;color:#555;margin:0;padding:7px 0;border-bottom:1px dashed #EDEDED;}
-    #team.card-body p:last-child{border-bottom:none;font-weight:800;color:#0A1931;background:#FFF7E6;border:1px solid #F3D9A0;padding:8px 10px;border-radius:8px;margin-top:10px;}
+    #team .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      max-width:1100px;
+      margin:0 auto;
+      align-items:stretch;
+    }
+    @media(max-width:900px){#team .grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){#team .grid{grid-template-columns:1fr}}
+    
+    #team .card{
+      background:#fff;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid #EAEAEA;
+      border-left:5px solid #D4A94E; /* same as donation boxes */
+      box-shadow:0 4px 18px rgba(10,25,49,.08);
+      transition:.25s ease;
+      display:flex;
+      flex-direction:column;
+    }
+    #team .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 14px 32px rgba(10,25,49,.14);
+    }
+    #team .card img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+      object-position:top center;
+      display:block;
+      background:#f0f0f0;
+    }
+    #team .card-body{padding:20px;display:flex;flex-direction:column;flex:1}
+    #team .card-body h3{margin:0 0 12px;color:#0A1931;font-size:19px}
+    #team .card-body p{
+      font-size:13.8px;
+      line-height:1.5;
+      color:#555;
+      margin:0;
+      padding:7px 0;
+      border-bottom:1px dashed #EDEDED;
+    }
+    #team .card-body p:last-child{
+      border-bottom:none;
+      font-weight:800;
+      color:#0A1931;
+      background:#FFF7E6;
+      border:1px solid #F3D9A0;
+      padding:8px 10px;
+      border-radius:8px;
+      margin-top:10px;
+    }
   </style>
+
   <div class="grid">
-    <article class="card"><img src="volunteer1.jpg" alt="Zodo Agadi"><div class="card-body"><h3>Zodo Agadi</h3><p>BSc Economics — University of Nigeria, Nsukka</p><p>MBA & MS in Computer Information Systems — SIUE</p><p>MS in Applied Computational Mathematics & Statistics — Notre Dame</p><p>Data Scientist (Industry)</p></div></article>
-    <article class="card"><img src="volunteer2.jpg" alt="Philip Àlàbí"><div class="card-body"><h3>Philip Àlàbí</h3><p>BSc(ED), Industrial Chemistry — TAI Solarin University of Education</p><p>MS, Chemistry — SIUE</p><p>MA & PhD, Organic Chemistry — Brown University</p><p>Scientist (Industry)</p></div></article>
-    <article class="card"><img src="volunteer3.jpg" alt="Elizabeth Agadi"><div class="card-body"><h3>Elizabeth Agadi</h3><p>BS, Biochemistry — University of Notre Dame</p><p>PhD, Integrated Biomedical Sciences — University of Notre Dame</p><p>Former Graduate Career Consultant — Notre Dame</p><p>Volunteer & Parent</p></div></article>
+    <article class="card">
+      <img src="volunteer1.jpg" alt="Zodo Agadi">
+      <div class="card-body">
+        <h3>Zodo Agadi</h3>
+        <p>BSc Economics — University of Nigeria, Nsukka</p>
+        <p>MBA & MS in Computer Information Systems — SIUE</p>
+        <p>MS in Applied Computational Mathematics & Statistics — Notre Dame</p>
+        <p>Data Scientist (Industry)</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="volunteer2.jpg" alt="Philip Àlàbí">
+      <div class="card-body">
+        <h3>Philip Àlàbí</h3>
+        <p>BSc(ED), Industrial Chemistry — TAI Solarin University of Education</p>
+        <p>MS, Chemistry — SIUE</p>
+        <p>MA & PhD, Organic Chemistry — Brown University</p>
+        <p>Scientist (Industry)</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="volunteer3.jpg" alt="Elizabeth Agadi">
+      <div class="card-body">
+        <h3>Elizabeth Agadi</h3>
+        <p>BS, Biochemistry — University of Notre Dame</p>
+        <p>PhD, Integrated Biomedical Sciences — University of Notre Dame</p>
+        <p>Former Graduate Career Consultant — Notre Dame</p>
+        <p>Volunteer & Parent</p>
+      </div>
+    </article>
   </div>
 </section>
 
 <section id="newsletter" class="sec fade-in" style="background:#F8FAFF;padding:60px 20px;text-align:center;border-top:1px solid #E6EAF2">
+  <style>
+    #newsletter h3{color:#0A1931;font-size:24px;margin:0 0 8px}
+    #newsletter p.sub{color:#666;font-size:14.5px;margin:0 auto 22px;max-width:500px;line-height:1.5}
+    #newsletter .form-wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto}
+    #newsletter input{
+      flex:1;min-width:240px;padding:13px 16px;border-radius:30px;
+      border:1.5px solid #D6DCE8;font-size:15px;outline:none
+    }
+    #newsletter input:focus{border-color:#D4A94E;box-shadow:0 0 0 3px rgba(212,169,78,.2)}
+    #newsletter button{
+      background:#D4A94E;color:#0A1931;border:2px solid #D4A94E;
+      padding:13px 26px;border-radius:30px;font-weight:800;font-size:15px;cursor:pointer;transition:.2s
+    }
+    #newsletter button:hover{background:#C19944;transform:translateY(-2px)}
+    #newsletter .trust{margin-top:12px;font-size:12px;color:#888}
+  </style>
+
   <h3>📬 Join Our Newsletter</h3>
-  <p class="sub" style="color:#666;font-size:14.5px;margin:0 auto 22px;max-width:500px">Stay updated on scholar achievements and opportunities.</p>
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdnocnoZmIgnt-KMzGFwjyCsa_lRss-3U6qQ98YHWGQpjpxwA/viewform" target="_blank" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto">
-    <input type="email" placeholder="Enter your email" required style="flex:1;min-width:240px;padding:13px 16px;border-radius:30px;border:1.5px solid #D6DCE8">
-    <button type="submit" style="background:#D4A94E;color:#0A1931;border:2px solid #D4A94E;padding:13px 26px;border-radius:30px;font-weight:800;cursor:pointer">Subscribe</button>
+  <p class="sub">Stay updated on scholar achievements, fully-funded PhD openings, and new opportunities.</p>
+
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdnocnoZmIgnt-KMzGFwjyCsa_lRss-3U6qQ98YHWGQpjpxwA/viewform" target="_blank" class="form-wrap">
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
   </form>
+  
+  <div class="trust">No spam, unsubscribe anytime. 100% free updates.</div>
 </section>
 
 <section id="contact" class="sec fade-in" style="background:#0A1931;padding:70px 20px;text-align:center;color:#fff">
-  <h2 style="color:#fff">Contact Us</h2>
-  <div style="max-width:680px;margin:0 auto;background:#fff;border-radius:16px;padding:32px 26px;color:#0A1931">
-    <div style="margin:8px 0;font-size:15px;color:#444">📍 128 S Ellsworth Place, South Bend, IN 46617, USA • <a href="mailto:info@ukwuata.org" style="color:#0A1931;font-weight:700;text-decoration:none;border-bottom:2px solid #D4A94E">info@ukwuata.org</a></div>
-    <div style="margin-top:10px;font-size:14px;color:#555"><b>Ukwuata Global Initiatives Inc</b> • EIN: 42-3531226 • 501(c)(3)</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:22px 0">
-      <div style="background:#F8FAFF;border:1px solid #E6EAF2;border-radius:12px;padding:14px">👍 Facebook<br><a href="https://www.facebook.com/profile.php?id=61593061477539" target="_blank" style="color:#0A1931;font-weight:800;text-decoration:none">Visit</a></div>
-      <div style="background:#F8FAFF;border:1px solid #E6EAF2;border-radius:12px;padding:14px">🔗 LinkedIn<br><a href="https://www.linkedin.com/company/143236925/" target="_blank" style="color:#0A1931;font-weight:800;text-decoration:none">Visit</a></div>
-      <div style="background:#F8FAFF;border:1px solid #E6EAF2;border-radius:12px;padding:14px">📝 Interest Form<br><a href="https://docs.google.com/forms/d/e/1FAIpQLSdnocnoZmIgnt-KMzGFwjyCsa_lRss-3U6qQ98YHWGQpjpxwA/viewform" target="_blank" style="color:#0A1931;font-weight:800;text-decoration:none">Form</a></div>
+  <style>
+    #contact h2{color:#fff;font-size:30px;margin:0 0 20px}
+    #contact .contact-box{
+      max-width:680px;
+      margin:0 auto;
+      background:#fff;
+      border-radius:16px;
+      padding:32px 26px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      color:#0A1931
+    }
+    #contact .line{margin:8px 0;font-size:15px;color:#444}
+    #contact .line a{color:#0A1931;font-weight:700;text-decoration:none;border-bottom:2px solid #D4A94E}
+    #contact .grid-links{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:22px 0 26px}
+    @media(max-width:650px){#contact .grid-links{grid-template-columns:1fr}}
+    #contact .link-card{background:#F8FAFF;border:1px solid #E6EAF2;border-radius:12px;padding:14px 12px;font-size:14px;transition:.2s}
+    #contact .link-card:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(10,25,49,.1)}
+    #contact .link-card a{color:#0A1931;font-weight:800;text-decoration:none;border-bottom:2px solid #D4A94E}
+    #contact .btn-msg{background:#D4A94E;color:#0A1931;padding:14px 30px;border-radius:30px;font-weight:900;text-decoration:none;display:inline-block;transition:.2s}
+    #contact .btn-msg:hover{background:#C19944;transform:translateY(-2px)}
+  </style>
+  <h2>Contact Us</h2>
+  <div class="contact-box">
+    <div class="line">📍 South Bend, IN • <a href="mailto:info@ukwuata.org">info@ukwuata.org</a></div>
+    <div class="grid-links">
+      <div class="link-card">👍 Facebook<br><a href="https://www.facebook.com/profile.php?id=61593061477539" target="_blank">Visit Page</a></div>
+      <div class="link-card">🔗 LinkedIn<br><a href="https://www.linkedin.com/company/143236925/" target="_blank">Visit Page</a></div>
+      <div class="link-card">📝 Interest Form<br><a href="https://docs.google.com/forms/d/e/1FAIpQLSdnocnoZmIgnt-KMzGFwjyCsa_lRss-3U6qQ98YHWGQpjpxwA/viewform" target="_blank">Complete Form</a></div>
     </div>
-    <a href="mailto:ukwuata@gmail.com" style="background:#D4A94E;color:#0A1931;padding:14px 30px;border-radius:30px;font-weight:900;text-decoration:none;display:inline-block">Send Message</a>
+    <a href="mailto:ukwuata@gmail.com" class="btn-msg">Send Message</a>
   </div>
+  <p style="margin-top:28px;color:#A8B2C0;font-size:13px">©️ 2026 Ukwuata Global Initiatives Inc. • 501(c)(3) • <a href="https://www.facebook.com/profile.php?id=61593061477539" style="color:#D4A94E;text-decoration:none">Facebook</a> • <a href="https://www.linkedin.com/company/143236925/" style="color:#D4A94E;text-decoration:none">LinkedIn</a></p>
 </section>
-
-<section id="donate" class="sec donate fade-in" style="text-align:center;background:#F0F6FF;padding:60px 20px">
+  
+<section id="donate" class="sec donate fade-in" style="text-align:center;background:#F0F6FF">
   <h2>❤️ Support Our Mission</h2>
-  <p style="max-width:750px;margin:15px auto;font-size:19px;font-weight:800;color:#0A1931">100% of your donation goes directly to our recipients.<br>All staff are volunteers.</p>
-  <div style="margin-top:22px"><a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank" style="background:#D4A94E;color:#0A1931;font-weight:800;padding:14px 26px;border-radius:50px;text-decoration:none;">💳 Donate via Card / Apple Pay</a></div>
-  <p style="margin-top:20px"><b>UGI is a registered 501(c)(3) — EIN 42-3531226 — 128 S Ellsworth Place, South Bend, IN 46617, USA</b><br>All staff are volunteers. 100% goes directly to scholars. Tax-deductible.</p>
-</section>
+  
+  <p style="max-width:750px;margin:15px auto;font-size:19px;font-weight:800;color:#0A1931;line-height:1.4">
+    100% of your donation goes directly to our recipients.<br>All staff are volunteers.
+  </p>
 
-<footer style="background:#0A1931;color:#fff;padding:45px 20px;text-align:center;border-top:3px solid #D4A94E">
-  <div style="max-width:900px;margin:0 auto">
-    <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(212,169,78,0.3);border-radius:12px;padding:20px;margin:0 0 22px;line-height:1.8;font-size:14px">
-      <b style="color:#D4A94E;font-size:15px">Ukwuata Global Initiatives Inc</b><br>
-      EIN: 42-3531226 | Registered 501(c)(3) Nonprofit Organization<br>
-      128 S Ellsworth Place, South Bend, IN 46617, USA<br>
-      Email: <a href="mailto:info@ukwuata.org" style="color:#D4A94E;text-decoration:none">info@ukwuata.org</a> | Website: <a href="https://www.ukwuata.org" style="color:#D4A94E;text-decoration:none">https://www.ukwuata.org</a>
-    </div>
-    <p style="color:#A8B2C0;font-size:12.5px;margin-top:18px;line-height:1.6">
-      © 2026 Ukwuata Global Initiatives Inc • EIN 42-3531226 • 128 S Ellsworth Place, South Bend, IN 46617, USA<br>
-      We don't create talent. We unlock it. | 100% volunteer-led | Tax-deductible donations
-    </p>
+  <p class="section-intro" style="max-width:780px;margin:0 auto">
+    Your generosity helps exceptional scholars from less-privileged backgrounds cover application fees, relocation, visa, and rent to start their fully-funded PhDs. The critical gap that prevents many scholars from accepting their PhD offer.
+  </p>
+
+  <style>
+.donate-wrapper{max-width:980px;margin:30px auto}
+.donate-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:22px;
+  text-align:left
+}
+@media(max-width:700px){
+ .donate-grid{grid-template-columns:1fr}
+}
+.prog{
+  cursor:pointer;
+  background:#fff;
+  border-radius:14px;
+  padding:22px 20px;
+  box-shadow:0 3px 12px rgba(10,25,49,.07);
+  transition:all.25s ease;
+  border:1px solid #EAEAEA;
+  border-left:5px solid #D4A94E;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:160px
+}
+.prog:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 28px rgba(10,25,49,.15);
+  border-left-color:#0A1931
+}
+.prog h3{
+  margin:0 0 10px;
+  color:#0A1931;
+  font-size:17px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  line-height:1.3
+}
+.prog.icon{
+  background:#FFF7E6;
+  border:1px solid #D4A94E;
+  width:36px;height:36px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0
+}
+.prog p{margin:0;color:#555;font-size:14px;line-height:1.5}
+.prog span.read{
+  font-size:12px;
+  color:#0A1931;
+  background:#FFF2D2;
+  border:1px solid #D4A94E;
+  padding:5px 10px;
+  border-radius:20px;
+  font-weight:800;
+  margin-top:14px;
+  display:inline-block;
+  align-self:flex-start
+}
+/* Modal */
+.donate-modal{border:none;border-radius:16px;padding:0;max-width:650px;width:92%;margin:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.donate-modal::backdrop{background:rgba(10,25,49,.6)}
+.modal-head{padding:20px 24px;background:#0A1931;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.modal-body{padding:24px;text-align:left;line-height:1.6;font-size:15px;color:#222;max-height:70vh;overflow-y:auto}
+.modal-body ul{padding-left:18px}
+.close-btn{background:#fff;color:#0A1931;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-weight:800}
+</style>
+
+<div class="donate-wrapper">
+  <div class="donate-grid">
+    <article class="prog" onclick="openDonate(1)">
+      <div>
+        <h3><span class="icon">📄</span> $50 – Application Fee</h3>
+        <p>Covers one PhD application fee. Scholars apply to 6+ schools — it's a game of numbers.</p>
+      </div>
+      <span class="read">Click for details →</span>
+    </article>
+
+    <article class="prog" onclick="openDonate(2)">
+      <div>
+        <h3><span class="icon">📝</span> $250 – Exams & Documents</h3>
+        <p>Covers GRE / TOEFL, transcripts, verification & DHL shipping.</p>
+      </div>
+      <span class="read">Click for details →</span>
+    </article>
+
+    <article class="prog" onclick="openDonate(3)">
+      <div>
+        <h3><span class="icon">🏠</span> $500 – One-Month Rent</h3>
+        <p>Covers first month rent to secure housing before stipend starts.</p>
+      </div>
+      <span class="read">Click for details →</span>
+    </article>
+
+    <article class="prog" onclick="openDonate(4)">
+      <div>
+        <h3><span class="icon">✈️</span> $1,000 – Relocation Package</h3>
+        <p><b>Visa Fee + Flight & Travel</b><br>$500 Visa Fee + $500 Flight</p>
+      </div>
+      <span class="read">Click for details →</span>
+    </article>
   </div>
-</footer>
+</div>
+
+<dialog id="donateModal" class="donate-modal">
+  <div class="modal-head">
+    <h3 id="modalTitle" style="margin:0"></h3>
+    <button class="close-btn" onclick="document.getElementById('donateModal').close()">X</button>
+  </div>
+  <div id="modalBody" class="modal-body"></div>
+</dialog>
 
 <script>
-  function toggleMenu(){document.querySelector('.nav-links').classList.toggle('show');}
-  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});});
-  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+const donateData = {
+  1: {title: "$50 – Application Fee", html: `<p><b>Why it's needed:</b> A PhD application is a game of numbers. Top students from under-resourced backgrounds must apply to at least 6 schools to get 1-2 offers. Each US application costs $75-$150, and most schools offer no waivers for international applicants.</p><p><b>Breakdown:</b></p><ul><li><b>Application Fee:</b> $50-$130 (avg $90)</li><li><b>WES Evaluation:</b> $30-$50 per school</li><li><b>Our model:</b> $50 per app x 6 schools</li></ul><p><b>Example:</b> 6 schools = $300. For a scholar earning $80/month in Ghana, that's 4 months salary. Your $50 buys a lottery ticket for a fully-funded future.</p>`},
+  2: {title: "$250 – Exams & Documents", html: `<p><b>Why it's needed:</b> US schools require standardized tests and verified documents priced in dollars.</p><ul><li><b>GRE:</b> $220</li><li><b>TOEFL/IELTS:</b> $185-$250</li><li><b>Transcripts + DHL:</b> $70-$130</li></ul><p><b>Example:</b> Scholar in Kenya: GRE ($220) + TOEFL ($200) + transcripts ($45) + DHL ($60) = $525. Your $250 covers TOEFL + all docs for 2-3 schools.</p>`},
+  3: {title: "$500 – One-Month Rent Support", html: `<p><b>Why it's needed:</b> #1 reason scholars decline offers. Stipends start 30-45 days AFTER arrival. Landlords require rent BEFORE.</p><ul><li><b>Rent:</b> $450-$700</li><li><b>Deposit/Setup:</b> $50-$100</li></ul><p><b>Example:</b> Arrives Aug 15, stipend Sept 30, needs $550 for keys on Aug 15. Your $500 is just the bridge to first paycheck.</p>`},
+  4: {title: "$1,000 – Relocation / Visa Fee, Flight & Travel", html: `<p><b>Why Critical:</b> Many get fully-funded offers but can't afford final step. Universities don't cover visa/travel upfront.</p><p><b>Visa Fee - $500:</b> SEVIS $350 + MRV $185 + courier $30-$65. Without it visa can't be issued.</p><p><b>Flight & Travel - $500:</b> One-way flight $400-$700 (Lagos to Chicago), baggage $75-$100, local transit $50.</p><p><b>Example:</b> $480 flight + $70 baggage + $30 bus = $580. Your $1,000 doesn't pay tuition — it unlocks a $300k+ PhD.</p>`}
+};
+function openDonate(id){
+  document.getElementById('modalTitle').innerText = donateData[id].title;
+  document.getElementById('modalBody').innerHTML = donateData[id].html;
+  document.getElementById('donateModal').showModal();
+}
 </script>
+
+  </div>
+
+<!-- BUTTONS -->
+<div class="hero-actions" style="margin-top:8px;justify-content:center; display:flex;">
+  <a class="btn" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank" style="background:#D4A94E; color:#0A1931; font-weight:800; padding:14px 26px; border-radius:50px; text-decoration:none;">💳 Donate via Card / Apple Pay</a>
+</div>
+
+<div class="zelle-box" style="max-width:720px; margin:22px auto 0 auto; background:#fff; border:1px solid #e9eef5; border-radius:16px; padding:22px; display:flex; gap:20px; justify-content:space-between; align-items:flex-start; box-shadow:0 4px 18px rgba(10,25,49,.05);">
+  <div class="zelle-info" style="flex:1; text-align:left;">
+    <h3 style="margin:0 0 14px 0; font-size:16px; color:#0A1931;">Donate via Zelle®️ — 0% Fee (Preferred)</h3>
+    <p style="background:#F7F9FC; padding:8px 12px; border-radius:8px; font-size:13px; margin:8px 0; display:flex; justify-content:space-between; align-items:center;"><b>Recipient:</b> UKWUATA GLOBAL INITIATIVES INC <button onclick="copyText(this, 'UKWUATA GLOBAL INITIATIVES INC')" style="font-size:11px; padding:4px 10px; border-radius:6px; border:1px solid #ccc; background:white; cursor:pointer;">Copy</button></p>
+    <p style="background:#F7F9FC; padding:8px 12px; border-radius:8px; font-size:13px; margin:8px 0; display:flex; justify-content:space-between; align-items:center;"><b>Zelle ID:</b> ukwuata <button onclick="copyText(this, 'ukwuata')" style="font-size:11px; padding:4px 10px; border-radius:6px; border:1px solid #ccc; background:white; cursor:pointer;">Copy</button></p>
+    <div style="font-size:13px; font-weight:600; color:#0A1931; margin-top:12px;">Open bank app → Zelle → Send to <b>ukwuata</b></div>
+    <p style="font-size:13px;color:#6B7A90;margin-top:14px">Email <a href="mailto:receipt@ukwuata.org" style="color:#0A1931;font-weight:800;text-decoration:none;border-bottom:2px solid #D4A94E">receipt@ukwuata.org</a> for 501(c)(3) receipt.</p>
+  </div>
+  <div style="text-align:center; background:#F7F9FC; padding:12px; border-radius:12px; border:1px dashed #d0d7e3;">
+    <div style="font-size:10px;color:#888;margin-bottom:8px;">Scan in bank app<br><b>UKWUATA GLOBAL INITIATIVES INC</b></div>
+    <img src="zelle-qr.jpg" alt="Zelle QR" style="width:180px;height:180px;object-fit:contain;border-radius:8px">
+    <div style="color:#7B2CBF;font-weight:900;margin-top:8px;font-size:13px;">Zelle®️</div>
+  </div>
+</div>
+
+
+<script>
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.style.background = '#D4A94E';
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.style.background = '#F0F6FF';
+    }, 1500);
+  });
+}
+</script>
+
+  <p class="donate-note">
+    <b>UGI is a registered 501(c)(3) — South Bend, IN</b><br>
+    All staff are volunteers. 100% goes directly to scholars. Tax-deductible.
+  </p>
+</section>
+     <footer>
+    <div class="footer-links"><a href="#about">About</a><a href="#scholars">Scholars</a><a href="#team">Team</a><a href="#programs">Programs</a><a href="#donate">Donate</a></div>
+    <div class="social-icons"><a href="https://www.facebook.com/profile.php?id=61593061477539" target="_blank">🔵</a><a href="https://www.linkedin.com/company/143236925/admin/dashboard/" target="_blank">💼</a></div>
+    <p>©️ 2026 Ukwuata Global Initiatives • South Bend, IN • 501(c)(3) • We don't create talent. We unlock it.</p>
+  </footer>
+
+  <script>
+    function toggleMenu(){document.querySelector('.nav-links').classList.toggle('show');}
+    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});});
+    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+  </script>
 </body>
 </html>

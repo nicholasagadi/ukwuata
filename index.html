@@ -626,14 +626,75 @@ function openDonate(id){
   <a class="btn" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank" style="background:#D4A94E; color:#0A1931; font-weight:800; padding:14px 26px; border-radius:50px; text-decoration:none;">💳 Donate via Card / Apple Pay</a>
 </div>
 
-<div class="zelle-box" style="max-width:720px; margin:22px auto 0 auto; background:#fff; border:1px solid #e9eef5; border-radius:16px; padding:22px; display:flex; gap:20px; justify-content:space-between; align-items:flex-start; box-shadow:0 4px 18px rgba(10,25,49,.05);">
-  <div class="zelle-info" style="flex:1; text-align:left;">
-    <h3 style="margin:0 0 14px 0; font-size:16px; color:#0A1931;">Donate via Zelle®️ — 0% Fee (Preferred)</h3>
-    <p style="background:#F7F9FC; padding:8px 12px; border-radius:8px; font-size:13px; margin:8px 0; display:flex; justify-content:space-between; align-items:center;"><b>Recipient:</b> UKWUATA GLOBAL INITIATIVES INC <button onclick="copyText(this, 'UKWUATA GLOBAL INITIATIVES INC')" style="font-size:11px; padding:4px 10px; border-radius:6px; border:1px solid #ccc; background:white; cursor:pointer;">Copy</button></p>
-    <p style="background:#F7F9FC; padding:8px 12px; border-radius:8px; font-size:13px; margin:8px 0; display:flex; justify-content:space-between; align-items:center;"><b>Zelle ID:</b> ukwuata <button onclick="copyText(this, 'ukwuata')" style="font-size:11px; padding:4px 10px; border-radius:6px; border:1px solid #ccc; background:white; cursor:pointer;">Copy</button></p>
-    <div style="font-size:13px; font-weight:600; color:#0A1931; margin-top:12px;">Open bank app → Zelle → Send to <b>ukwuata</b></div>
-    <p style="font-size:13px;color:#6B7A90;margin-top:14px">Email <a href="mailto:receipt@ukwuata.org" style="color:#0A1931;font-weight:800;text-decoration:none;border-bottom:2px solid #D4A94E">receipt@ukwuata.org</a> for 501(c)(3) receipt.</p>
+<div style="max-width:720px; margin:40px auto; font-family:Inter, sans-serif;">
+
+  <!-- Title like Our Programs -->
+  <h2 style="text-align:center; color:#0A1931; font-size:32px; font-weight:800; margin:0 0 8px 0;">Support Our Scholars</h2>
+  <p style="text-align:center; color:#5a6d8a; font-size:14px; margin:0 0 24px 0;">Your donation provides PhD application support. <b>0% goes to fees - 100% to scholars.</b></p>
+
+  <div style="background:#fff; border-radius:16px; box-shadow:0 8px 30px rgba(10,25,49,.08); border:1px solid #eef2f7; overflow:hidden;">
+
+    <!-- Card / Apple Pay - 0% Fee -->
+    <div style="padding:22px 22px 18px 22px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <span style="font-size:11px; font-weight:800; background:#fdf2d5; color:#9c7a2f; padding:4px 10px; border-radius:999px; letter-spacing:.5px;">— 0% FEE —</span>
+      </div>
+      
+      <div style="border:1px solid #eef2f7; border-radius:12px; padding:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="border:1px solid #e5e7eb; border-radius:6px; padding:6px 8px; font-size:12px; font-weight:800;">Pay</div>
+          <div>
+            <div style="font-weight:800; color:#0A1931; font-size:15px;">Donate via Card / Apple Pay</div>
+            <div style="font-size:12px; color:#6b7f9e;">Secure via Zeffy • Instant • 0% processing fee</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21750" target="_blank" 
+         style="display:block; margin-top:14px; background:#D9A441; color:#0A1931; text-align:center; padding:13px; border-radius:10px; font-weight:800; font-size:15px; text-decoration:none;">
+        Pay Donate via Card / Apple Pay
+      </a>
+
+      <div style="display:flex; align-items:center; gap:12px; margin:18px 0; color:#9aadc8; font-size:13px;">
+        <div style="flex:1; height:1px; background:#eef2f7;"></div> or <div style="flex:1; height:1px; background:#eef2f7;"></div>
+      </div>
+
+      <!-- Zelle - 0% Fee -->
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+        <span style="color:#6d28d9; font-weight:900; font-size:20px;">Zelle®</span>
+        <div>
+          <div style="font-weight:800; color:#0A1931; font-size:15px;">Donate via Zelle</div>
+          <div style="font-size:12px; color:#6b7f9e;">Direct to our organization • 0% processing fee</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <span style="font-size:13px; color:#6b7f9e; min-width:70px;">Recipient:</span>
+          <div style="flex:1; background:#f7f9fc; border:1px solid #e8eef6; border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center;">
+            <b style="font-size:13px; color:#0A1931;">UKWUATA GLOBAL INITIATIVES INC</b>
+            <button onclick="navigator.clipboard.writeText('UKWUATA GLOBAL INITIATIVES INC')" style="border:1px solid #d9a441; background:#fff; color:#9c7a2f; border-radius:6px; padding:4px 10px; font-size:11px; cursor:pointer;">Copy</button>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+          <span style="font-size:13px; color:#6b7f9e; min-width:70px;">Zelle ID:</span>
+          <div style="flex:1; background:#f7f9fc; border:1px solid #e8eef6; border-radius:8px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center;">
+            <b style="font-size:13px; color:#0A1931;">ukwuata</b>
+            <button onclick="navigator.clipboard.writeText('ukwuata')" style="border:1px solid #d9a441; background:#fff; color:#9c7a2f; border-radius:6px; padding:4px 10px; font-size:11px; cursor:pointer;">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fdf2d5; border-left:3px solid #D9A441; border-radius:4px; padding:10px 12px; margin-top:12px; font-weight:600; font-size:13px; color:#0A1931; display:flex; gap:8px; align-items:center;">
+        <span>ⓘ</span> Open bank app → Zelle → Send to ukwuata
+      </div>
+    </div>
+
+    <div style="background:#f7f9fc; padding:12px; text-align:center; font-size:11.5px; color:#5a6d8a; border-top:1px solid #eef2f7;">
+      501(c)(3) EIN 42-3531226 • Tax-deductible donation • Receipt via email
+    </div>
   </div>
+</div>
   <div style="text-align:center; background:#F7F9FC; padding:12px; border-radius:12px; border:1px dashed #d0d7e3;">
     <div style="font-size:10px;color:#888;margin-bottom:8px;">Scan in bank app<br><b>UKWUATA GLOBAL INITIATIVES INC</b></div>
     <img src="zelle-qr.jpg" alt="Zelle QR" style="width:180px;height:180px;object-fit:contain;border-radius:8px">
